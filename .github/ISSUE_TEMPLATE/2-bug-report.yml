@@ -1,0 +1,38 @@
+name: 🧰 Bug Report
+description: Something doesn't work
+labels: [🧰 Bug]
+body:
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: ✏️ Describe the Bug
+      description: A clear and concise description
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: 🏭 How to Reproduce the Bug
+      description: Steps to reproduce the behavior
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: ✔︎ Confirm these checks
+      description: Make sure you reviewed below
+      options:
+        - label: I searched the GitHub [Issues](https://github.com/5ouma/mobicard/issues) or [Discussions](https://github.com/5ouma/mobicard/discussions).
+          required: true
+        - label: I tried with the latest version.
+          required: false
+        - label: I agree to follow the [Code of Conduct](https://github.com/5ouma/mobicard/blob/main/.github/CODE_OF_CONDUCT.md).
+          required: true
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: 🗒️ Additional Information
+      description: Anything else you want to add

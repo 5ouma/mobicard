@@ -1,0 +1,20 @@
+name: 🍞 Setup Bun with Cache
+description: Install Bun and cache project dependencies
+
+runs:
+  using: composite
+
+  steps:
+    - name: 🍞 Setup Bun
+      uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2.0.1
+
+    - name: 🫙 Cache node_modules
+      uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4.1.2
+      with:
+        path: ./node_modules
+        key: ${{ runner.os }}-bun-${{ hashFiles('./bun.lockb') }}
+        restore-keys: ${{ runner.os }}-bun-
+
+    - name: 📦 Install Dependencies
+      run: bun install
+      shell: bash
