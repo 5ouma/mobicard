@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "astro dev",
+    "astrobook": "ASTROBOOK=1 astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "check:astro": "astro check",
@@ -15,6 +16,8 @@
   },
   "devDependencies": {
     "@astrojs/check": "0.9.4",
-    "@biomejs/biome": "1.9.4"
+    "@biomejs/biome": "1.9.4",
+    "@types/node": "22.9.0",
+    "astrobook": "0.5.1"
   }
 }
