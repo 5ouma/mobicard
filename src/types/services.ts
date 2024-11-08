@@ -16,9 +16,11 @@ export const services = {
     icon: "mingcute:ins-line",
   },
   Mastodon: {
+    url: "",
     icon: "mingcute:mastodon-line",
   },
   Misskey: {
+    url: "",
     icon: "simple-icons:misskey",
   },
   Posts: {
