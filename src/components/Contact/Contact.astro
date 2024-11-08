@@ -1,0 +1,45 @@
+---
+import { Icon } from "astro-icon/components";
+
+import { getContact } from "../../libs/contact.ts";
+import type { service } from "../../types/services.ts";
+import "../../styles/global.css";
+
+export type Props = { service: service; id: string };
+const props = Astro.props;
+
+const contact = getContact(props.service, props.id);
+---
+
+<a
+  href={contact.url}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={`Go to ${props.id} profile on ${props.service}`}
+>
+  <Icon id="icon" name={contact.icon} />
+  <span>{props.id}</span>
+</a>
+
+<style>
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--foreground);
+  }
+
+  #icon {
+    width: 1.5rem;
+    height: auto;
+  }
+
+  span {
+    font-family: "LINE Seed JP";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+  }
+</style>
