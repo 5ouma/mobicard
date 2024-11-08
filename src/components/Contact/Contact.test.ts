@@ -5,12 +5,37 @@ import Contact from "./Contact.astro";
 import * as stories from "./story.ts";
 
 describe("Contact", () => {
-  for (const [name, props] of Object.entries(stories)) {
-    test(name, async () => {
-      const container: AstroContainer = await AstroContainer.create();
-      const result: string = await container.renderToString(Contact, { props });
+  describe("Valid service and ID", () => {
+    for (const [name, props] of Object.entries(stories)) {
+      test(name, async () => {
+        const container: AstroContainer = await AstroContainer.create();
+        const result: string = await container.renderToString(Contact, {
+          props,
+        });
 
-      expect(result).toContain(`>${props.id}</span>`);
-    });
-  }
+        expect(result).toContain(`>${props.id}</span>`);
+        expect(result).toMatch(new RegExp(`href=["'].*${props.id}["']`));
+        expect(result).toContain('<use href="#ai:');
+        expect(result).toContain("aria-label");
+      });
+    }
+  });
+
+  describe("Invalid service or ID", () => {
+    const invalidProps: { service: string; id: string }[] = [
+      { service: "Mastodon", id: "invalid-id" },
+      { service: "Misskey", id: "invalid-id" },
+      { service: "invalid-service", id: "id" },
+    ];
+
+    for (const [_, props] of Object.entries(invalidProps)) {
+      test(props.service, async () => {
+        const container: AstroContainer = await AstroContainer.create();
+
+        await expect(
+          container.renderToString(Contact, { props }),
+        ).rejects.toThrow();
+      });
+    }
+  });
 });

@@ -13,6 +13,7 @@ describe("Bio", () => {
       expect(result).toContain(`>${props.name}</span>`);
       expect(result).toContain(`>${props.description}</span>`);
       expect(result).toContain(`<img src="${props.icon}"`);
+      expect(result).toContain(`Profile picture of ${props.name}`);
     });
   }
 });
