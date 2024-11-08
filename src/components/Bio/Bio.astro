@@ -12,7 +12,12 @@ const props = Astro.props;
 
 <div id="bio">
   <div id="profile">
-    <img src={props.icon} alt="icon" loading="lazy" decoding="async" />
+    <img
+      src={props.icon}
+      alt={`Profile picture of ${props.name}`}
+      loading="lazy"
+      decoding="async"
+    />
     <span id="name">{props.name}</span>
   </div>
   <span id="description">{props.description}</span>
