@@ -14,9 +14,9 @@ describe("Homepage", () => {
       const url = new URL(props.url);
 
       expect(result).toContain(
-        `>${encodeURI(url.hostname)}${
+        `> ${encodeURI(url.hostname)}${
           url.pathname === "/" ? "" : url.pathname
-        }</span>`,
+        } </span>`,
       );
     });
   }

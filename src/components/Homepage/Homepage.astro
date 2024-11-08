@@ -12,11 +12,18 @@ const url = new URL(props.url);
 const qrCode: string = await generateQRCode(props.url);
 ---
 
-<a href={props.url} target="_blank" rel="noopener noreferrer">
+<a
+  href={props.url}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={`Visit ${url.hostname}`}
+>
   <Svg id="qr" raw={qrCode} />
   <div>
     <Icon id="icon" name="mingcute:home-3-line" />
-    <span>{`${url.hostname}${url.pathname === "/" ? "" : url.pathname}`}</span>
+    <span aria-hidden="true">
+      {`${url.hostname}${url.pathname === "/" ? "" : url.pathname}`}
+    </span>
   </div>
 </a>
 
