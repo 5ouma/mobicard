@@ -1,6 +1,5 @@
 ---
 import "../../styles/global.css";
-import "./style.css";
 
 export type Props = {
   name: string;
@@ -22,3 +21,42 @@ const props = Astro.props;
   </div>
   <span id="description">{props.description}</span>
 </div>
+
+<style>
+  #bio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  #profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  img {
+    width: 6rem;
+    height: auto;
+  }
+
+  span {
+    font-family: "LINE Seed JP", sans-serif;
+    font-style: normal;
+    line-height: normal;
+    color: var(--foreground);
+  }
+
+  #name {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  #description {
+    font-size: 0.9rem;
+    font-weight: normal;
+    white-space: pre-line;
+  }
+</style>
