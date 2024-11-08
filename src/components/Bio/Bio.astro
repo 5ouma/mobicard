@@ -1,0 +1,24 @@
+---
+import "../../styles/global.css";
+import "./style.css";
+
+export type Props = {
+  name: string;
+  description: string;
+  icon: string;
+};
+const props = Astro.props;
+---
+
+<div id="bio">
+  <div id="profile">
+    <img
+      src={props.icon}
+      alt={`Profile picture of ${props.name}`}
+      loading="lazy"
+      decoding="async"
+    />
+    <span id="name">{props.name}</span>
+  </div>
+  <span id="description">{props.description}</span>
+</div>

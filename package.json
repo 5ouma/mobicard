@@ -4,10 +4,13 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "astro dev",
+    "astrobook": "ASTROBOOK=1 astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "check:astro": "astro check",
-    "check:biome": "biome check"
+    "check:biome": "biome check",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage"
   },
   "dependencies": {
     "astro": "4.16.10",
@@ -15,6 +18,10 @@
   },
   "devDependencies": {
     "@astrojs/check": "0.9.4",
-    "@biomejs/biome": "1.9.4"
+    "@biomejs/biome": "1.9.4",
+    "@types/node": "22.9.0",
+    "@vitest/coverage-v8": "2.1.4",
+    "astrobook": "0.5.1",
+    "vitest": "2.1.4"
   }
 }
