@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "LINE Seed JP";
+  src: url("/fonts/LINESeedJP_Rg.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LINE Seed JP";
+  src: url("/fonts/LINESeedJP_Bd.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light dark;
+  --foreground-light: #242424;
+  --foreground-dark: #f4f4f4;
+  --background-light: #f4f4f4;
+  --background-dark: #242424;
+  --foreground: light-dark(var(--foreground-light), var(--foreground-dark));
+  --background: light-dark(var(--background-light), var(--background-dark));
+}
