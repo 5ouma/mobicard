@@ -1,16 +1,55 @@
 ---
-
+import Bio from "../components/Bio/Bio.astro";
+import Contact from "../components/Contact/Contact.astro";
+import Homepage from "../components/Homepage/Homepage.astro";
+import Layout from "../layouts/Layout.astro";
+import meta from "../libs/meta.ts";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+<Layout title={meta.name} description={meta.description} icon={meta.icon}>
+  <main>
+    <div id="info">
+      <Bio name={meta.name} description={meta.description} icon={meta.icon} />
+      <div id="contacts">
+        {
+          meta.contacts.map(({ service, id }) => (
+            <Contact service={service} id={id} />
+          ))
+        }
+      </div>
+    </div>
+    <Homepage url={meta.homepage} />
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    padding: 3rem;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  @media (max-width: 40rem) {
+    main {
+      flex-direction: column;
+    }
+  }
+
+  #info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  #contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+</style>
