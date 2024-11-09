@@ -30,7 +30,9 @@ const contact = getContact(props.service, props.id);
     color: var(--foreground);
     border-bottom: 2px solid
       color-mix(in srgb, var(--foreground) 30%, transparent);
-    transition: all 0.3s ease-in-out;
+    transition:
+      color 0.3s ease-in-out,
+      border-color 0.3s ease-in-out;
     &:hover {
       color: color-mix(in srgb, var(--accent-color) 20%, var(--foreground));
       border-color: color-mix(
