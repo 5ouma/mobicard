@@ -21,18 +21,33 @@ const contact = getContact(props.service, props.id);
   <span>{props.id}</span>
 </a>
 
-<style>
+<style define:vars={{ "accent-color": contact.color }}>
   a {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
     color: var(--foreground);
+    border-bottom: 2px solid
+      color-mix(in srgb, var(--foreground) 30%, transparent);
+    transition:
+      color 0.3s ease-in-out,
+      border-color 0.3s ease-in-out;
+    &:hover,
+    &:focus-visible {
+      color: color-mix(in srgb, var(--accent-color) 20%, var(--foreground));
+      border-color: color-mix(
+        in srgb,
+        var(--accent-color) 60%,
+        var(--foreground)
+      );
+    }
   }
 
   #icon {
     width: 1.5rem;
     height: auto;
+    opacity: 80%;
   }
 
   span {
