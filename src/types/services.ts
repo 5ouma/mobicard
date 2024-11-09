@@ -42,7 +42,7 @@ export const services = {
   Mail: {
     url: "mailto:",
     icon: "mingcute:mail-line",
-    color: "#0000000",
+    color: "",
   },
 };
 
