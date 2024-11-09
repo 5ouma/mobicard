@@ -35,7 +35,8 @@ const qrCode: string = await generateQRCode(props.url);
     align-items: center;
     gap: 0.3rem;
     text-decoration: none;
-    &:hover div {
+    &:hover div,
+    &:focus-visible div {
       border-color: color-mix(in srgb, var(--foreground) 60%, transparent);
     }
   }
