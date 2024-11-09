@@ -1,5 +1,3 @@
-alwaysReplace: true
-
 customLabels:
   - text: "- [x] 🎉 New Feature"
     label: 🎉 New Feature
