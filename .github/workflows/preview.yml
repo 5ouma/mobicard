@@ -32,7 +32,7 @@ jobs:
         id: deploy
         uses: cloudflare/wrangler-action@05f17c4a695b4d94b57b59997562c6a4624c64e4 # v3.12.1
         with:
-          command: pages deploy dist --project-name="$GITHUB_REPOSITORY"
+          command: pages deploy dist --project-name='${{ github.event.repository.name }}'
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
 
