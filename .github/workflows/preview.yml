@@ -1,0 +1,74 @@
+name: 🔍 Preview
+
+on:
+  pull_request:
+    paths:
+      - "**.astro"
+      - "**.ts"
+      - bun.lockb
+      - "!**.test.ts"
+
+jobs:
+  deploy:
+    name: 🚀 Deploy to the Preview
+    runs-on: Ubuntu-Latest
+    outputs:
+      url: ${{ steps.deploy.outputs.deployment-url }}
+
+    steps:
+      - name: 🚚 Checkout Repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: 🍞 Setup Bun with Cache
+        uses: ./.github/actions/setup-bun-with-cache
+
+      - name: 👾 Create a Meta File
+        run: echo ${{ vars.META_FILE }} >meta.json
+
+      - name: 🛠️ Build
+        run: bun run build
+
+      - name: ⛅️ Deploy to the Preview
+        id: deploy
+        uses: cloudflare/wrangler-action@05f17c4a695b4d94b57b59997562c6a4624c64e4 # v3.12.1
+        with:
+          command: pages deploy dist --project-name="$GITHUB_REPOSITORY"
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+  lighthouse:
+    name: 🔦 Analyze Performance
+    needs: deploy
+    runs-on: Ubuntu-Latest
+
+    steps:
+      - name: 🔦 Analyze Performance with Lighthouse
+        id: lighthouse
+        uses: treosh/lighthouse-ci-action@2f8dda6cf4de7d73b29853c3f29e73a01e297bd8 # 12.1.0
+        with:
+          urls: ${{ needs.deploy.outputs.url }}
+
+      - name: 📊 Arrange the Summary
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        id: summary
+        with:
+          result-encoding: string
+          script: |
+            const manifest = JSON.parse("${{ steps.lighthouse.outputs.manifest }}");
+            const gauge = Object.entries(manifest[0].summary).map(([label, percentage]) => {
+              const score = percentage * 100;
+              const icon = score >= 90 ? "🟢" : score >= 50 ? "🟠" : "🔴";
+              return { label, score: `${icon} ${score}` };
+            });
+            const labels = `| ${gauge.map(({ label }) => label).join(" | ")} |`;
+            const scores = `| ${gauge.map(({ score }) => score).join(" | ")} |`;
+            return `${labels}\n| ${gauge.map(() => ":-:").join(" | ")} |\n${scores}`;
+
+      - name: 💬 Comment the Result
+        uses: mshick/add-pr-comment@b8f338c590a895d50bcbfa6c5859251edc8952fc # v2.8.2
+        with:
+          message: |
+            ## 🔦 Lighthouse Result
+
+            ${{ steps.summary.outputs.result }}
+          message-id: lighthouse
