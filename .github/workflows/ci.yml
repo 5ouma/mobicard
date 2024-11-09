@@ -28,6 +28,9 @@ jobs:
       - name: 🍞 Setup Bun with Cache
         uses: ./.github/actions/setup-bun-with-cache
 
+      - name: 👾 Create a Meta File
+        run: echo '${{ vars.META_FILE }}' >meta.json
+
       - name: 🚀 Astro Check
         run: bun run check:astro
 
@@ -56,6 +59,9 @@ jobs:
       - name: 🍞 Setup Bun with Cache
         uses: ./.github/actions/setup-bun-with-cache
 
+      - name: 👾 Create a Meta File
+        run: echo '${{ vars.META_FILE }}' >meta.json
+
       - name: 🧪 Run Tests
         run: bun run test:cov
 
@@ -80,6 +86,9 @@ jobs:
 
       - name: 🍞 Setup Bun with Cache
         uses: ./.github/actions/setup-bun-with-cache
+
+      - name: 👾 Create a Meta File
+        run: echo '${{ vars.META_FILE }}' >meta.json
 
       - name: 🛠️ Build Check
         run: bun run build
