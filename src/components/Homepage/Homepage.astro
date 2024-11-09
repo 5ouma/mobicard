@@ -35,6 +35,9 @@ const qrCode: string = await generateQRCode(props.url);
     align-items: center;
     gap: 0.3rem;
     text-decoration: none;
+    &:hover div {
+      border-color: color-mix(in srgb, var(--foreground) 60%, transparent);
+    }
   }
 
   #qr {
@@ -50,7 +53,11 @@ const qrCode: string = await generateQRCode(props.url);
     justify-content: center;
     align-items: center;
     gap: 0.3rem;
+    padding: 0 0.3rem;
     color: var(--foreground);
+    border-bottom: 2px solid
+      color-mix(in srgb, var(--foreground) 30%, transparent);
+    transition: all 0.3s ease-in-out;
   }
 
   #icon {
