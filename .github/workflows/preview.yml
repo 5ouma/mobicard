@@ -58,8 +58,8 @@ jobs:
           script: |
             const manifest = JSON.parse("${{ steps.lighthouse.outputs.manifest }}");
             const gauge = Object.entries(manifest[0].summary).map(([label, percentage]) => {
-              const score = percentage * 100;
-              const icon = score >= 90 ? "🟢" : score >= 50 ? "🟠" : "🔴";
+              const score = Math.round(percentage * 100);
+              const icon = score >= 90 ? "🟢" : score >= 50 ? "🟧" : "🔺";
               return { label, score: `${icon} ${score}` };
             });
             const labels = `| ${gauge.map(({ label }) => label).join(" | ")} |`;
@@ -73,4 +73,12 @@ jobs:
             ## 🔦 Lighthouse Result
 
             ${{ steps.summary.outputs.result }}
+
+            <details><summary>📊 Score Scale</summary>
+
+            |  Fail   | Average  |   Pass    |
+            | :-----: | :------: | :-------: |
+            | 🔺 0-49 | 🟧 50-89 | 🟢 90-100 |
+
+            </details>
           message-id: lighthouse
