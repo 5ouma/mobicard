@@ -56,7 +56,7 @@ jobs:
         with:
           result-encoding: string
           script: |
-            const manifest = JSON.parse("${{ steps.lighthouse.outputs.manifest }}");
+            const manifest = ${{ steps.lighthouse.outputs.manifest }};
             const gauge = Object.entries(manifest[0].summary).map(([label, percentage]) => {
               const score = Math.round(percentage * 100);
               const icon = score >= 90 ? "🟢" : score >= 50 ? "🟧" : "🔺";
