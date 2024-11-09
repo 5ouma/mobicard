@@ -38,6 +38,8 @@ jobs:
 
   lighthouse:
     name: 🔦 Analyze Performance
+    permissions:
+      pull-requests: write
     needs: deploy
     runs-on: Ubuntu-Latest
 
