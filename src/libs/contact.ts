@@ -1,12 +1,12 @@
-import { type service, services } from "../types/services";
+import { type serviceName, services } from "../types/services";
 
-const isFediverse = (service: service): boolean => {
+const isFediverse = (service: serviceName): boolean => {
   return service === "Mastodon" || service === "Misskey";
 };
 
-type contact = { url: string; icon: string; color: string };
+export type contact = Readonly<{ url: string; icon: string; color: string }>;
 
-export const getContact = (service: service, id: string): contact => {
+export const getContact = (service: serviceName, id: string): contact => {
   const specified: contact = services[service];
 
   if (!specified) throw new Error(`Unsupported service: ${service}`);

@@ -1,3 +1,9 @@
+type info = {
+  url: string;
+  icon: string;
+  color: string;
+};
+
 export const services = {
   Bluesky: {
     url: "https://bsky.app/profile/",
@@ -44,6 +50,6 @@ export const services = {
     icon: "mingcute:mail-line",
     color: "",
   },
-};
+} as const satisfies Record<string, info>;
 
-export type service = keyof typeof services;
+export type serviceName = keyof typeof services;

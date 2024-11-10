@@ -5,8 +5,8 @@ import { Icon } from "astro-icon/components";
 import "../../styles/global.css";
 import { generateQRCode } from "../../libs/qrcode.ts";
 
-export type Props = { url: string };
-const props = Astro.props;
+export type Props = Readonly<{ url: string }>;
+const props: Props = Astro.props;
 
 const url = new URL(props.url);
 const qrCode: string = await generateQRCode(props.url);
@@ -35,6 +35,7 @@ const qrCode: string = await generateQRCode(props.url);
     align-items: center;
     gap: 0.3rem;
     text-decoration: none;
+
     &:hover div,
     &:focus-visible div {
       border-color: color-mix(in srgb, var(--foreground) 60%, transparent);
