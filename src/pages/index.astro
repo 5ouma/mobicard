@@ -8,15 +8,17 @@ import meta from "../libs/meta.ts";
 
 <Layout title={meta.name} description={meta.description} icon={meta.icon}>
   <main>
-    <div id="info">
+    <div>
       <Bio name={meta.name} description={meta.description} icon={meta.icon} />
-      <div id="contacts">
+      <ul aria-label="Contacts">
         {
           meta.contacts.map(({ service, id }) => (
-            <Contact service={service} id={id} />
+            <li>
+              <Contact service={service} id={id} />
+            </li>
           ))
         }
-      </div>
+      </ul>
     </div>
     <Homepage url={meta.homepage} />
   </main>
@@ -25,7 +27,7 @@ import meta from "../libs/meta.ts";
 <style>
   main {
     display: flex;
-    padding: 3rem;
+    margin: 3rem;
     justify-content: center;
     align-items: center;
     gap: 3rem;
@@ -37,7 +39,7 @@ import meta from "../libs/meta.ts";
     }
   }
 
-  #info {
+  div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,11 +47,17 @@ import meta from "../libs/meta.ts";
     gap: 1.5rem;
   }
 
-  #contacts {
+  ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
   }
 </style>

@@ -10,8 +10,8 @@ describe("Bio", () => {
       const container: AstroContainer = await AstroContainer.create();
       const result: string = await container.renderToString(Bio, { props });
 
-      expect(result).toContain(`>${props.name}</span>`);
-      expect(result).toContain(`>${props.description}</span>`);
+      expect(result).toContain(`>${props.name}</h1>`);
+      expect(result).toContain(`>${props.description}</p>`);
       expect(result).toContain(`<img src="${props.icon}"`);
       expect(result).toContain(`${props.name}'s avatar`);
     });

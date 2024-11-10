@@ -14,9 +14,9 @@ const props = Astro.props;
 <div id="bio">
   <div id="profile">
     <Image src={props.icon} alt={`${props.name}'s avatar`} inferSize={true} />
-    <span id="name">{props.name}</span>
+    <h1>{props.name}</h1>
   </div>
-  <span id="description">{props.description}</span>
+  <p>{props.description}</p>
 </div>
 
 <style>
@@ -39,19 +39,21 @@ const props = Astro.props;
     height: auto;
   }
 
-  span {
+  h1,
+  p {
+    margin: 0;
     font-family: "LINE Seed JP", sans-serif;
     font-style: normal;
     line-height: normal;
     color: var(--foreground);
   }
 
-  #name {
+  h1 {
     font-size: 2.5rem;
     font-weight: bold;
   }
 
-  #description {
+  p {
     font-size: 0.9rem;
     font-weight: normal;
     white-space: pre-line;
