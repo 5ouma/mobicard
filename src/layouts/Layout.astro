@@ -1,4 +1,6 @@
 ---
+import { pwaInfo } from "virtual:pwa-info";
+
 import "../styles/global.css";
 
 type Props = { title: string; description: string; icon: string };
@@ -9,7 +11,7 @@ const { title, description, icon } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, viewport-fit=cover" />
 
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -24,6 +26,18 @@ const { title, description, icon } = Astro.props;
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={icon} />
+
+    {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
+    <meta
+      name="theme-color"
+      content="#f4f4f4"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#242424"
+      media="(prefers-color-scheme: dark)"
+    />
   </head>
   <body>
     <slot />

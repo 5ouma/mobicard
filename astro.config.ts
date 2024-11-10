@@ -1,10 +1,26 @@
 import { codecovVitePlugin } from "@codecov/vite-plugin";
+import AstroPWA from "@vite-pwa/astro";
 import type { AstroIntegration } from "astro";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 import astrobook from "astrobook";
 
-const integrations: AstroIntegration[] = [icon()];
+import meta from "./src/libs/meta.ts";
+
+const integrations: AstroIntegration[] = [
+  icon(),
+  AstroPWA({
+    manifest: {
+      name: meta.name,
+      short_name: meta.name,
+      description: meta.description,
+      icons: [{ src: meta.icon }],
+      orientation: "landscape",
+      display: "fullscreen",
+      theme_color: "#f4f4f4",
+    },
+  }),
+];
 
 if (process.env.ASTROBOOK) {
   integrations.push(astrobook({ directory: "src/components" }));
