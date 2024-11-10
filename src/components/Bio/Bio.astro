@@ -8,15 +8,15 @@ export type Props = {
   description: string;
   icon: string;
 };
-const props = Astro.props;
+const { name, description, icon } = Astro.props;
 ---
 
 <div id="bio">
   <div id="profile">
-    <Image src={props.icon} alt={`${props.name}'s avatar`} inferSize={true} />
-    <h1>{props.name}</h1>
+    <Image src={icon} alt={`${name}'s avatar`} inferSize={true} />
+    <h1>{name}</h1>
   </div>
-  <p>{props.description}</p>
+  <p>{description}</p>
 </div>
 
 <style>
