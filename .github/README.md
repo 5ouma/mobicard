@@ -109,5 +109,5 @@
 
 I happily welcome your contributions!
 Before you contribute,
-I would recommend reading [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
+I would recommend reading [CONTRIBUTING.md](./CONTRIBUTING.md)
 for a better development experience.
