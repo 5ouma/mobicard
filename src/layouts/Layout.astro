@@ -60,3 +60,14 @@ const { title, description, icon } = Astro.props;
     background-color: var(--background);
   }
 </style>
+
+<script>
+  import { registerSW } from "virtual:pwa-register";
+  if ("serviceWorker" in navigator) {
+    const updateSW = registerSW({
+      onNeedRefresh() {
+        updateSW(true);
+      },
+    });
+  }
+</script>

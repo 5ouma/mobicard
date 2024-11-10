@@ -19,6 +19,18 @@ const integrations: AstroIntegration[] = [
       display: "fullscreen",
       theme_color: "#f4f4f4",
     },
+    workbox: {
+      maximumFileSizeToCacheInBytes: 1024 * 1024 * 2.2,
+      globPatterns: ["**/*.{html,js,woff2}"],
+      navigateFallback: "/",
+      runtimeCaching: [
+        {
+          handler: "NetworkFirst",
+          options: { cacheName: "icon" },
+          urlPattern: () => true,
+        },
+      ],
+    },
   }),
 ];
 
