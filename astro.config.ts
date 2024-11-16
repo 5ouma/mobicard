@@ -1,3 +1,4 @@
+import sitemap from "@astrojs/sitemap";
 import { codecovVitePlugin } from "@codecov/vite-plugin";
 import AstroPWA from "@vite-pwa/astro";
 import type { AstroIntegration } from "astro";
@@ -8,7 +9,7 @@ import astrobook from "astrobook";
 import meta from "./src/libs/meta.ts";
 
 const integrations: AstroIntegration[] = [
-  icon(),
+  sitemap(),
   AstroPWA({
     manifest: {
       name: meta.name,
@@ -32,6 +33,7 @@ const integrations: AstroIntegration[] = [
       ],
     },
   }),
+  icon(),
 ];
 
 if (process.env.ASTROBOOK) {
@@ -39,6 +41,7 @@ if (process.env.ASTROBOOK) {
 }
 
 export default defineConfig({
+  site: meta.card,
   integrations,
   vite: {
     plugins: [
