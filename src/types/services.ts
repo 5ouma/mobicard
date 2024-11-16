@@ -40,6 +40,11 @@ export const services = {
     icon: "simple-icons:readdotcv",
     color: "#111111",
   },
+  Threads: {
+    url: "threads.net",
+    icon: "mingcute:threads-line",
+    color: "#000000",
+  },
   Twitter: {
     url: "twitter.com",
     icon: "mingcute:twitter-line",

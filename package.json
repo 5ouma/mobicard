@@ -14,6 +14,7 @@
     "test:cov": "vitest run --coverage"
   },
   "dependencies": {
+    "@astrojs/sitemap": "3.2.1",
     "@cxa/astro-inline-svg": "0.5.1",
     "@iconify-json/mingcute": "1.2.1",
     "@iconify-json/simple-icons": "1.2.11",
