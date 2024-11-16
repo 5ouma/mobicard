@@ -19,7 +19,7 @@ customLabels:
     label: 🎽 CI
   - text: "- [x] 🧠 Meta"
     label: 🧠 Meta
-  - text: "chore(deps): "
+  - text: <!--pre-commit.ci start-->
     label: ⛓️ Dependencies
   - text: "Release: v"
     label: 🚀 Release
