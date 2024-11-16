@@ -1,26 +1,30 @@
 ---
+import Access from "../components/Access/Access.astro";
 import Bio from "../components/Bio/Bio.astro";
-import Contact from "../components/Contact/Contact.astro";
-import Homepage from "../components/Homepage/Homepage.astro";
+import Card from "../components/Card/Card.astro";
+import SNS from "../components/SNS/SNS.astro";
 import Layout from "../layouts/Layout.astro";
 import meta from "../libs/meta.ts";
 ---
 
 <Layout title={meta.name} description={meta.description} icon={meta.icon}>
   <main>
-    <div>
+    <div id="info">
       <Bio name={meta.name} description={meta.description} icon={meta.icon} />
-      <ul aria-label="Contacts">
-        {
-          meta.contacts.map(({ service, id }) => (
-            <li>
-              <Contact service={service} id={id} />
-            </li>
-          ))
-        }
-      </ul>
+      <div id="contacts">
+        <Access homepage={meta.homepage} email={meta.email} />
+        <ul aria-label="Contacts">
+          {
+            meta.sns.map(({ service, id }) => (
+              <li>
+                <SNS service={service} id={id} />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </div>
-    <Homepage url={meta.homepage} />
+    <Card url={meta.card} />
   </main>
 </Layout>
 
@@ -34,17 +38,24 @@ import meta from "../libs/meta.ts";
   }
 
   @media (max-width: 40rem) {
-    main {
+    main,
+    #contacts {
       flex-direction: column;
     }
   }
 
-  div {
+  #info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 1.5rem;
+  }
+
+  #contacts {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
   }
 
   ul {
