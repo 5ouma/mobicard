@@ -22,47 +22,51 @@
 
 ## 📊 Usage
 
-1. Clone this repository
+1. Create a new project with `mobicard` template
 
    ```sh
-   git clone https://github.com/5ouma/mobicard.git
+   npm create astro --template 5ouma/mobicard
    ```
 
 2. Copy the [`meta.tmpl.json`] to `meta.json` and edit as you prefer
 
-   [`meta.tmpl.json`]: ../meta.tmpl.json
+   > [👾 Meta File](#-meta-file)
+
+3. Build and Preview the project
+
+   ```sh
+   bun run build
+   ```
+
+   ```sh
+   bun run preview
+   ```
+
+<br /><br />
+
+## 🔨 Development
+
+1. Clone this repository
+
+   ```sh
+   git clone https://github.com/5ouma/reproxy.git
+   ```
+
+2. Copy the [`meta.tmpl.json`] to `meta.json` and edit as you prefer
 
    > [👾 Meta File](#-meta-file)
 
-3. Install the dependencies
+3. Run the development server
 
    ```sh
-   bun install
+   # Run the development server
+   bun run dev
    ```
 
-4. Build or Run the development server
-
-   - For production
-
-     1. Build the project
-
-        ```sh
-        bun run build
-        ```
-
-     2. Deploy the created `dist` directory
-
-   - For development
-
-     ```sh
-     # Run the development server
-     bun run dev
-     ```
-
-     ```sh
-     # Run the Astrobook
-     bun run astrobook
-     ```
+   ```sh
+   # Run the Astrobook
+   bun run astrobook
+   ```
 
 <br /><br />
 
@@ -73,10 +77,14 @@
   "name": "Your Name",
   "description": "Your Description",
   "icon": "Your Icon URL",
-  "contacts": [{ "service": "Service Name", "id": "Your ID" }],
-  "homepage": "Your Homepage URL"
+  "homepage": "Your Homepage URL",
+  "email": "Your Email",
+  "sns": [{ "service": "Service Name", "id": "Your ID" }],
+  "card": "Your Card URL"
 }
 ```
+
+[`meta.tmpl.json`]: ../meta.tmpl.json
 
 > [!NOTE]
 > Valid contact services are:
