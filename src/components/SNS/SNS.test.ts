@@ -25,7 +25,7 @@ describe("SNS", () => {
       { service: "invalid-service", id: "id" },
     ];
 
-    for (const [_, props] of Object.entries(invalidProps)) {
+    for (const props of invalidProps) {
       test(props.service, async () => {
         const container: AstroContainer = await AstroContainer.create();
 
