@@ -13,15 +13,8 @@ describe("Homepage", () => {
         const result: string = await container.renderToString(Homepage, {
           props,
         });
-        const url = new URL(props.url);
 
-        expect(result).toContain(
-          `> ${encodeURI(url.hostname)}${
-            url.pathname === "/" ? "" : url.pathname
-          } </span>`,
-        );
-        expect(result).toContain('<use href="#ai:');
-        expect(result).toContain("aria-label");
+        expect(result).toMatchSnapshot();
       });
     }
   });

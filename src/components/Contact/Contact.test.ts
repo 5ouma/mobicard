@@ -13,10 +13,7 @@ describe("Contact", () => {
           props,
         });
 
-        expect(result).toContain(`>${props.id}</span>`);
-        expect(result).toMatch(new RegExp(`href=["'].*${props.id}["']`));
-        expect(result).toContain('<use href="#ai:');
-        expect(result).toContain("aria-label");
+        expect(result).toMatchSnapshot();
       });
     }
   });

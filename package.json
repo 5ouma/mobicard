@@ -10,6 +10,7 @@
     "check:astro": "astro check",
     "check:biome": "biome check",
     "test": "vitest run",
+    "test:update": "vitest run --update",
     "test:cov": "vitest run --coverage"
   },
   "dependencies": {
