@@ -1,0 +1,70 @@
+---
+import { Icon } from "astro-icon/components";
+
+import "../../styles/global.css";
+
+export type Props = { homepage: string; email?: string };
+const { homepage, email } = Astro.props;
+
+const url = new URL(homepage);
+---
+
+<div>
+  <a
+    href={homepage}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={`Visit ${url.hostname}`}
+  >
+    <Icon name="mingcute:home-3-line" />
+    <span aria-hidden="true">
+      {`${url.hostname}${url.pathname === "/" ? "" : url.pathname}`}
+    </span>
+  </a>
+  {email &&
+  <a href=`mailto:${email}` aria-label={`Send an email to ${email}`}>
+    <Icon name="mingcute:mail-line" />
+    <span aria-hidden="true">{email}</span>
+  </a>
+  }
+</div>
+
+<style>
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--foreground);
+    border-bottom: 2px solid
+      color-mix(in srgb, var(--foreground) 30%, transparent);
+    transition: border-color 0.3s ease-in-out;
+
+    &:hover,
+    &:focus-visible {
+      border-color: color-mix(in srgb, var(--foreground) 60%, transparent);
+    }
+  }
+
+  svg {
+    width: 1.5rem;
+    height: auto;
+    opacity: 80%;
+  }
+
+  span {
+    font-family: "LINE Seed JP", sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+  }
+</style>
