@@ -1,0 +1,75 @@
+---
+import Svg from "@cxa/astro-inline-svg";
+import { Icon } from "astro-icon/components";
+
+import "../../styles/global.css";
+import { generateQRCode } from "../../libs/qrcode.ts";
+
+export type Props = { url: string };
+const { url } = Astro.props;
+
+const { hostname } = new URL(url);
+const qrCode: string = await generateQRCode(url);
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={`Visit ${hostname}`}
+>
+  <Svg id="qr" raw={qrCode} />
+  <div>
+    <Icon id="icon" name="mingcute:idcard-line" />
+    <span aria-hidden="true">{hostname}</span>
+  </div>
+</a>
+
+<style>
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+    text-decoration: none;
+
+    &:hover div,
+    &:focus-visible div {
+      border-color: color-mix(in srgb, var(--foreground) 60%, transparent);
+    }
+  }
+
+  #qr {
+    path {
+      stroke: var(--foreground);
+    }
+    width: 6rem;
+    height: auto;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0 0.3rem;
+    color: var(--foreground);
+    border-bottom: 2px solid
+      color-mix(in srgb, var(--foreground) 30%, transparent);
+    transition: border-color 0.3s ease-in-out;
+  }
+
+  #icon {
+    width: 1rem;
+    height: auto;
+  }
+
+  span {
+    font-family: "LINE Seed JP", sans-serif;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+  }
+</style>
