@@ -6,22 +6,22 @@ type info = {
 
 export const services = {
   Bluesky: {
-    url: "https://bsky.app/profile/",
+    url: "bsky.app/profile",
     icon: "mingcute:bluesky-social-line",
     color: "#0285FF",
   },
   Facebook: {
-    url: "https://www.facebook.com/",
+    url: "www.facebook.com",
     icon: "mingcute:facebook-line",
     color: "#0866FF",
   },
   GitHub: {
-    url: "https://github.com/",
+    url: "github.com",
     icon: "mingcute:github-line",
     color: "#181717",
   },
   Instagram: {
-    url: "https://www.instagram.com/",
+    url: "www.instagram.com",
     icon: "mingcute:ins-line",
     color: "#E4405F",
   },
@@ -36,19 +36,14 @@ export const services = {
     color: "#A1CA03",
   },
   Posts: {
-    url: "https://posts.cv/",
+    url: "posts.cv",
     icon: "simple-icons:readdotcv",
     color: "#111111",
   },
   Twitter: {
-    url: "https://twitter.com/",
+    url: "twitter.com",
     icon: "mingcute:twitter-line",
     color: "#1D9BF0",
-  },
-  Mail: {
-    url: "mailto:",
-    icon: "mingcute:mail-line",
-    color: "",
   },
 } as const satisfies Record<string, info>;
 

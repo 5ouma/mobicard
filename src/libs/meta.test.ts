@@ -7,7 +7,8 @@ test("meta", () => {
     name: expect.any(String),
     description: expect.any(String),
     icon: expect.any(String),
-    contacts: expect.any(Array),
     homepage: expect.any(String),
+    sns: expect.any(Array),
+    card: expect.any(String),
   });
 });

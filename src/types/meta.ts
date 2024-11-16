@@ -4,6 +4,8 @@ export type meta = Readonly<{
   name: string;
   description: string;
   icon: string;
-  contacts: Readonly<{ service: serviceName; id: string }>[];
   homepage: string;
+  email?: string;
+  sns: Readonly<{ service: serviceName; id: string }>[];
+  card: string;
 }>;
