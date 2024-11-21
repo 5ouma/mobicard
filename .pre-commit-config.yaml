@@ -3,7 +3,6 @@ ci:
     chore(fix): Auto fixes from pre-commit.com hooks
 
     For more information, see https://pre-commit.ci.
-  autoupdate_commit_msg: "chore(deps): Bump pre-commit hook"
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -35,6 +34,12 @@ repos:
     rev: v1.7.4
     hooks:
       - id: actionlint
+
+  - repo: https://github.com/renovatebot/pre-commit-hooks
+    rev: 39.23.0
+    hooks:
+      - id: renovate-config-validator
+        files: (^|/).?(renovate(?:rc)?|default)(?:\.json5?)?$
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.42.0
