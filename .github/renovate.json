@@ -1,6 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:best-practices"],
-  "dependencyDashboard": false,
+  "extends": ["github>5ouma/utils"],
   "labels": ["⛓️ Dependencies"]
 }
