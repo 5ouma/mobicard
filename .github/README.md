@@ -2,7 +2,7 @@
 
 <div align="center">
 
-**🪪 Turn your smartphone into a name card**
+**📇 Turn your smartphone into a name card**
 
 [![GitHub Release](https://img.shields.io/github/v/release/5ouma/mobicard?style=flat-square)](https://github.com/5ouma/mobicard/releases)
 <br />
@@ -49,7 +49,7 @@
 1. Clone this repository
 
    ```sh
-   git clone https://github.com/5ouma/reproxy.git
+   git clone https://github.com/5ouma/mobicard.git
    ```
 
 2. Copy the [`meta.tmpl.json`] to `meta.json` and edit as you prefer
