@@ -35,7 +35,17 @@ export const Posts: Props = {
   id: "support",
 };
 
+export const Threads: Props = {
+  service: "Threads",
+  id: "@threads",
+};
+
 export const Twitter: Props = {
   service: "Twitter",
   id: "twitter",
+};
+
+export const YouTube: Props = {
+  service: "YouTube",
+  id: "youtube",
 };

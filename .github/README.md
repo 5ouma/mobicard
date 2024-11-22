@@ -96,8 +96,9 @@
 > - Mastodon
 > - Misskey
 > - Posts
+> - Threads
 > - Twitter
-> - Mail
+> - YouTube
 
 <br /><br />
 

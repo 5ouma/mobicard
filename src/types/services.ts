@@ -50,6 +50,11 @@ export const services = {
     icon: "mingcute:twitter-line",
     color: "#1D9BF0",
   },
+  YouTube: {
+    url: "youtube.com",
+    icon: "mingcute:youtube-line",
+    color: "#FF0000",
+  },
 } as const satisfies Record<string, info>;
 
 export type serviceName = keyof typeof services;
