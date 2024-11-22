@@ -1,48 +1,44 @@
 import sitemap from "@astrojs/sitemap";
 import { codecovVitePlugin } from "@codecov/vite-plugin";
 import AstroPWA from "@vite-pwa/astro";
-import type { AstroIntegration } from "astro";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 import astrobook from "astrobook";
 
 import meta from "./src/libs/meta.ts";
 
-const integrations: AstroIntegration[] = [
-  sitemap(),
-  AstroPWA({
-    manifest: {
-      name: meta.name,
-      short_name: meta.name,
-      description: meta.description,
-      icons: [{ src: meta.icon }],
-      orientation: "landscape",
-      display: "fullscreen",
-      theme_color: "#f4f4f4",
-    },
-    workbox: {
-      maximumFileSizeToCacheInBytes: 1024 * 1024 * 2.2,
-      globPatterns: ["**/*.{html,js,woff2}"],
-      navigateFallback: "/",
-      runtimeCaching: [
-        {
-          handler: "NetworkFirst",
-          options: { cacheName: "icon" },
-          urlPattern: () => true,
-        },
-      ],
-    },
-  }),
-  icon(),
-];
-
-if (process.env.ASTROBOOK) {
-  integrations.push(astrobook({ directory: "src/components" }));
-}
-
 export default defineConfig({
   site: meta.card,
-  integrations,
+  integrations: [
+    sitemap(),
+    icon(),
+    AstroPWA({
+      manifest: {
+        name: meta.name,
+        short_name: meta.name,
+        description: meta.description,
+        icons: [{ src: meta.icon }],
+        orientation: "landscape",
+        display: "fullscreen",
+        theme_color: "#f4f4f4",
+      },
+      workbox: {
+        maximumFileSizeToCacheInBytes: 1024 * 1024 * 2.2,
+        globPatterns: ["**/*.{html,js,woff2}"],
+        navigateFallback: "/",
+        runtimeCaching: [
+          {
+            handler: "NetworkFirst",
+            options: { cacheName: "icon" },
+            urlPattern: () => true,
+          },
+        ],
+      },
+    }),
+    ...(process.env.ASTROBOOK
+      ? [astrobook({ directory: "src/components" })]
+      : []),
+  ],
   vite: {
     plugins: [
       codecovVitePlugin({
