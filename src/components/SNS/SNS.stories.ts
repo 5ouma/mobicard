@@ -15,3 +15,4 @@ export const Misskey = { args: stories.Misskey };
 export const Posts = { args: stories.Posts };
 export const Threads = { args: stories.Threads };
 export const Twitter = { args: stories.Twitter };
+export const YouTube = { args: stories.YouTube };
