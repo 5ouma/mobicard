@@ -1,5 +1,5 @@
 import Access from "./Access.astro";
-import * as stories from "./story.ts";
+import * as stories from "./stories.ts";
 
 export default {
   title: "Homepage and Email",

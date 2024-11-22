@@ -1,5 +1,5 @@
 import SNS from "./SNS.astro";
-import * as stories from "./story.ts";
+import * as stories from "./stories.ts";
 
 export default {
   title: "SNS Links",
