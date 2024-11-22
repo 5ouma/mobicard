@@ -48,5 +48,5 @@ export default defineConfig({
       }),
     ],
   },
-  devToolbar: { enabled: false },
+  devToolbar: { enabled: process.env.NODE_ENV !== "test" },
 });
