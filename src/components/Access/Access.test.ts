@@ -3,7 +3,7 @@ import { describe, expect, test } from "vitest";
 
 import Access from "./Access.astro";
 import type { Props } from "./Access.astro";
-import * as stories from "./story.ts";
+import * as stories from "./stories.ts";
 
 describe("Access", () => {
   describe("Valid URL", () => {

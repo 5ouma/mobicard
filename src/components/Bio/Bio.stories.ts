@@ -1,5 +1,5 @@
 import Bio from "./Bio.astro";
-import * as stories from "./story.ts";
+import * as stories from "./stories.ts";
 
 export default {
   title: "Bio",

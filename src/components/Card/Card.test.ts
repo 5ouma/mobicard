@@ -3,7 +3,7 @@ import { describe, expect, test } from "vitest";
 
 import Card from "./Card.astro";
 import type { Props } from "./Card.astro";
-import * as stories from "./story.ts";
+import * as stories from "./stories.ts";
 
 describe("Card", () => {
   describe("Valid URL", () => {
