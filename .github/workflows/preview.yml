@@ -11,6 +11,9 @@ on:
 jobs:
   deploy:
     name: 🚀 Deploy to the Preview
+    permissions:
+      contents: read
+      deployments: write
     runs-on: Ubuntu-Latest
     outputs:
       url: ${{ steps.deploy.outputs.deployment-url }}
@@ -35,6 +38,7 @@ jobs:
           command: pages deploy dist --project-name='${{ github.event.repository.name }}'
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
   lighthouse:
     name: 🔦 Analyze Performance

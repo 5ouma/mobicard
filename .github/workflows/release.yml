@@ -30,6 +30,9 @@ jobs:
 
   deploy:
     name: 🚀 Deploy to the Production
+    permissions:
+      contents: read
+      deployments: write
     needs: tagpr
     if: ${{ needs.tagpr.outputs.tag != '' }}
     runs-on: Ubuntu-Latest
@@ -53,3 +56,4 @@ jobs:
           command: pages deploy dist --project-name='${{ github.event.repository.name }}'
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
