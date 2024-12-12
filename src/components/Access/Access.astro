@@ -21,11 +21,13 @@ const url = new URL(homepage);
       {`${url.hostname}${url.pathname === "/" ? "" : url.pathname}`}
     </span>
   </a>
-  {email &&
-  <a href=`mailto:${email}` aria-label={`Send an email to ${email}`}>
-    <Icon name="mingcute:mail-line" />
-    <span aria-hidden="true">{email}</span>
-  </a>
+  {
+    email && (
+      <a href={`mailto:${email}`} aria-label={`Send an email to ${email}`}>
+        <Icon name="mingcute:mail-line" />
+        <span aria-hidden="true">{email}</span>
+      </a>
+    )
   }
 </div>
 
