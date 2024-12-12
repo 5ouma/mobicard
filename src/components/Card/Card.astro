@@ -12,27 +12,30 @@ const { hostname } = new URL(url);
 const qrCode: string = await generateQRCode(url);
 ---
 
-<a
-  href={url}
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label={`Visit ${hostname}`}
->
+<button id="card" type="button" aria-label="Share your card">
   <Svg id="qr" raw={qrCode} />
   <div>
-    <Icon id="icon" name="mingcute:idcard-line" />
+    <Icon class="icon" id="idcard" name="mingcute:idcard-line" />
+    <Icon
+      class="icon"
+      id="check"
+      name="mingcute:checkbox-line"
+      display="none"
+    />
     <span aria-hidden="true">{hostname}</span>
   </div>
-</a>
+</button>
 
 <style>
-  a {
+  button {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 0.3rem;
-    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
 
     &:hover div,
     &:focus-visible div {
@@ -60,7 +63,7 @@ const qrCode: string = await generateQRCode(url);
     transition: border-color 0.3s ease-in-out;
   }
 
-  #icon {
+  .icon {
     width: 1rem;
     height: auto;
   }
@@ -73,3 +76,34 @@ const qrCode: string = await generateQRCode(url);
     line-height: normal;
   }
 </style>
+
+<script is:inline>
+  const shareData = {
+    title: document.title,
+    text: document.head.querySelector('[name="description"]').content,
+    url: location.href,
+  };
+
+  document.getElementById("card").addEventListener("click", async () => {
+    if (
+      /iPhone|iPad|Android/i.test(navigator.userAgent) &&
+      navigator.canShare(shareData)
+    ) {
+      try {
+        await navigator.share(shareData);
+      } catch (error) {
+        if (error.name !== "AbortError") console.error("Error sharing:", error);
+      }
+    } else {
+      await navigator.clipboard.writeText(shareData.url);
+      const [cardIcon, checkIcon] = [
+        document.getElementById("idcard"),
+        document.getElementById("check"),
+      ];
+      [cardIcon.style.display, checkIcon.style.display] = ["none", "block"];
+      setTimeout(() => {
+        [cardIcon.style.display, checkIcon.style.display] = ["block", "none"];
+      }, 1000);
+    }
+  });
+</script>
