@@ -1,5 +1,4 @@
 import sitemap from "@astrojs/sitemap";
-import { codecovVitePlugin } from "@codecov/vite-plugin";
 import AstroPWA from "@vite-pwa/astro";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
@@ -39,14 +38,5 @@ export default defineConfig({
       ? [astrobook({ directory: "src/components" })]
       : []),
   ],
-  vite: {
-    plugins: [
-      codecovVitePlugin({
-        enableBundleAnalysis: process.env.CODECOV_TOKEN !== undefined,
-        bundleName: "mobicard",
-        uploadToken: process.env.CODECOV_TOKEN,
-      }),
-    ],
-  },
   devToolbar: { enabled: process.env.NODE_ENV !== "test" },
 });
