@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 
 import "../../styles/global.css";
 
@@ -13,7 +13,12 @@ const { name, description, icon } = Astro.props;
 
 <div id="bio">
   <div id="profile">
-    <Image src={icon} alt={`${name}'s avatar`} inferSize={true} />
+    <Picture
+      src={icon}
+      formats={["avif", "webp", "jpg"]}
+      alt={`${name}'s avatar`}
+      inferSize={true}
+    />
     <h1>{name}</h1>
   </div>
   <p>{description}</p>
