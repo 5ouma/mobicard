@@ -10,4 +10,9 @@ import type { meta } from "../types/meta.ts";
  * console.log(meta);
  * ```
  */
-export default data as meta;
+export default {
+  ...data,
+  icon: new URL(data.icon),
+  homepage: new URL(data.homepage),
+  card: new URL(data.card),
+} as meta;

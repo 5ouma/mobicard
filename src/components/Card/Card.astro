@@ -5,11 +5,10 @@ import { Icon } from "astro-icon/components";
 import "../../styles/global.css";
 import { generateQRCode } from "../../libs/qrcode.ts";
 
-export type Props = { url: string };
+export type Props = { url: URL };
 const { url } = Astro.props;
 
-const { hostname } = new URL(url);
-const qrCode: string = await generateQRCode(url);
+const qrCode: string = await generateQRCode(url.href);
 ---
 
 <button id="card" type="button" aria-label="Share your card">
@@ -22,7 +21,7 @@ const qrCode: string = await generateQRCode(url);
       name="mingcute:checkbox-line"
       display="none"
     />
-    <span aria-hidden="true">{hostname}</span>
+    <span aria-hidden="true">{url.hostname}</span>
   </div>
 </button>
 

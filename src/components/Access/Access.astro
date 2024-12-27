@@ -3,10 +3,8 @@ import { Icon } from "astro-icon/components";
 
 import "../../styles/global.css";
 
-export type Props = { homepage: string; email?: string };
+export type Props = { homepage: URL; email?: string };
 const { homepage, email } = Astro.props;
-
-const url = new URL(homepage);
 ---
 
 <div>
@@ -14,11 +12,11 @@ const url = new URL(homepage);
     href={homepage}
     target="_blank"
     rel="noopener noreferrer"
-    aria-label={`Visit ${url.hostname}`}
+    aria-label={`Visit ${homepage.hostname}`}
   >
     <Icon name="mingcute:home-3-line" />
     <span aria-hidden="true">
-      {`${url.hostname}${url.pathname === "/" ? "" : url.pathname}`}
+      {`${homepage.hostname}${homepage.pathname === "/" ? "" : homepage.pathname}`}
     </span>
   </a>
   {
