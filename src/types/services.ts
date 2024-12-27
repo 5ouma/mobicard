@@ -1,9 +1,41 @@
-type info = {
-  url: string;
-  icon: string;
-  color: string;
-};
+/**
+ * SNS information of the user.
+ *
+ * @property url URL of the user
+ * @property icon Icon of the service
+ * @property color Color of the service
+ *
+ * @example
+ * ```ts
+ * import { sns } from "./types/services.ts";
+ * const service: sns = {
+ *   url: "twitter.com",
+ *   icon: "mingcute:twitter-line",
+ *   color: "#1D9BF0",
+ * };
+ */
+export type sns = Readonly<{ url: string; icon: string; color: string }>;
 
+/**
+ * SNS services.
+ *
+ * @property Bluesky Bluesky
+ * @property Facebook Facebook
+ * @property GitHub GitHub
+ * @property Instagram Instagram
+ * @property Mastodon Mastodon
+ * @property Misskey Misskey
+ * @property Posts Posts
+ * @property Threads Threads
+ * @property Twitter Twitter
+ * @property YouTube YouTube
+ *
+ * @example
+ * ```ts
+ * import { services } from "./types/services.ts";
+ * console.log(services);
+ * ```
+ */
 export const services = {
   Bluesky: {
     url: "bsky.app/profile",
@@ -55,6 +87,15 @@ export const services = {
     icon: "mingcute:youtube-line",
     color: "#FF0000",
   },
-} as const satisfies Record<string, info>;
+} as const satisfies Record<string, sns>;
 
+/**
+ * SNS service names.
+ *
+ * @example
+ * ```ts
+ * import { serviceName } from "./types/services.ts";
+ * const service: serviceName = "Bluesky";
+ * ```
+ */
 export type serviceName = keyof typeof services;

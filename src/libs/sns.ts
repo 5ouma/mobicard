@@ -1,11 +1,37 @@
-import { type serviceName, services } from "../types/services";
+import { type serviceName, services, type sns } from "../types/services.ts";
 
+/**
+ * Check if the service is a Fediverse service.
+ *
+ * @param service
+ * @returns `true` if the service is a Fediverse service
+ *
+ * @example
+ * ```ts
+ * import { isFediverse } from "./libs/sns.ts";
+ * const service = "Mastodon";
+ * console.log(isFediverse(service)); // true
+ * ```
+ */
 const isFediverse = (service: serviceName): boolean => {
   return service === "Mastodon" || service === "Misskey";
 };
 
-export type sns = Readonly<{ url: string; icon: string; color: string }>;
-
+/**
+ * Get SNS information.
+ *
+ * @param service Service name
+ * @param id User ID
+ * @returns SNS information
+ * @throws If the service is not supported
+ * @throws If the ID format is invalid
+ *
+ * @example
+ * ```ts
+ * import { getSNS } from "./libs/sns.ts";
+ * console.log(getSNS("Twitter", "twitter"));
+ * ```
+ */
 export const getSNS = (service: serviceName, id: string): sns => {
   const specified: sns = services[service];
 
