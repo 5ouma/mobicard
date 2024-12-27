@@ -7,7 +7,7 @@ import astrobook from "astrobook";
 import meta from "./src/libs/meta.ts";
 
 export default defineConfig({
-  site: meta.card,
+  site: meta.card.href,
   integrations: [
     sitemap(),
     icon(),
@@ -16,7 +16,7 @@ export default defineConfig({
         name: meta.name,
         short_name: meta.name,
         description: meta.description,
-        icons: [{ src: meta.icon }],
+        icons: [{ src: meta.icon.href }],
         orientation: "landscape",
         display: "fullscreen",
         theme_color: "#f4f4f4",

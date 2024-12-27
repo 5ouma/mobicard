@@ -17,23 +17,23 @@ import type { serviceName } from "./services.ts";
  * const site: meta = {
  *   name: "Site Name",
  *   description: "Site description",
- *   icon: "https://example.com/icon.png",
- *   homepage: "https://example.com",
+ *   icon: new URL("https://example.com/icon.png"),
+ *   homepage: new URL("https://example.com"),
  *   email: "email@example.com",
  *   sns: [
  *     { service: "Twitter", id: "twitter" },
  *     { service: "GitHub", id: "github" },
  *   ],
- *   card: "https://example.com",
+ *   card: new URL("https://example.com"),
  * };
  * ```
  */
 export type meta = Readonly<{
   name: string;
   description: string;
-  icon: string;
-  homepage: string;
+  icon: URL;
+  homepage: URL;
   email?: string;
   sns: Readonly<{ service: serviceName; id: string }>[];
-  card: string;
+  card: URL;
 }>;

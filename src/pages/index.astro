@@ -7,10 +7,14 @@ import Layout from "../layouts/Layout.astro";
 import meta from "../libs/meta.ts";
 ---
 
-<Layout title={meta.name} description={meta.description} icon={meta.icon}>
+<Layout title={meta.name} description={meta.description} icon={meta.icon.href}>
   <main>
     <div id="info">
-      <Bio name={meta.name} description={meta.description} icon={meta.icon} />
+      <Bio
+        name={meta.name}
+        description={meta.description}
+        icon={meta.icon.href}
+      />
       <div id="contacts">
         <Access homepage={meta.homepage} email={meta.email} />
         <ul aria-label="Contacts">
