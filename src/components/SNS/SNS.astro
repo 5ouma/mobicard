@@ -1,8 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
 
-import { getSNS, type sns } from "../../libs/sns.ts";
-import type { serviceName } from "../../types/services.ts";
+import { getSNS } from "../../libs/sns.ts";
+import type { serviceName, sns } from "../../types/services.ts";
 import "../../styles/global.css";
 
 export type Props = { service: serviceName; id: string };
