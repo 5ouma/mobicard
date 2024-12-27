@@ -23,15 +23,8 @@ export default defineConfig({
       },
       workbox: {
         maximumFileSizeToCacheInBytes: 1024 * 1024 * 2.2,
-        globPatterns: ["**/*.{html,js,woff2}"],
+        globPatterns: ["**/*.{html,js,avif,webp,jpg,woff2}"],
         navigateFallback: "/",
-        runtimeCaching: [
-          {
-            handler: "NetworkFirst",
-            options: { cacheName: "icon" },
-            urlPattern: () => true,
-          },
-        ],
       },
     }),
     ...(process.env.ASTROBOOK
@@ -39,4 +32,13 @@ export default defineConfig({
       : []),
   ],
   devToolbar: { enabled: process.env.NODE_ENV !== "test" },
+  image: {
+    remotePatterns: [
+      {
+        protocol: meta.icon.protocol.replace(":", ""),
+        hostname: meta.icon.hostname,
+        pathname: meta.icon.pathname,
+      },
+    ],
+  },
 });
