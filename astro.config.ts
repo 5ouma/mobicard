@@ -22,7 +22,6 @@ export default defineConfig({
         theme_color: "#f4f4f4",
       },
       workbox: {
-        maximumFileSizeToCacheInBytes: 1024 * 1024 * 2.2,
         globPatterns: ["**/*.{html,js,avif,webp,jpg,woff2}"],
         navigateFallback: "/",
       },
