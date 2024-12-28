@@ -1,6 +1,6 @@
 @font-face {
   font-family: "LINE Seed JP";
-  src: url("/fonts/LINESeedJP_Rg.woff2") format("woff2");
+  src: url("/fonts/LINESeedJP-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "LINE Seed JP";
-  src: url("/fonts/LINESeedJP_Bd.woff2") format("woff2");
+  src: url("/fonts/LINESeedJP-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
