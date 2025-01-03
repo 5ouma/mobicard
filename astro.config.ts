@@ -22,7 +22,7 @@ export default defineConfig({
         theme_color: "#f4f4f4",
       },
       workbox: {
-        globPatterns: ["**/*.{html,js,avif,webp,jpg,woff2}"],
+        globPatterns: ["**/*.{html,js,avif,webp,jpg}"],
         navigateFallback: "/",
       },
     }),
