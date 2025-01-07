@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: 🍞 Setup Bun with Cache
-        uses: 5ouma/utils/setup-bun-with-cache@973639b350016dec6fe7f665f4650d22ea1935d5 # main
+        uses: 5ouma/utils/setup-bun-with-cache@8f3bce2a734646521c5c1bea150d7489c5867212 # main
 
       - name: 👾 Create a Meta File
         run: echo '${{ vars.META_FILE }}' >meta.json
