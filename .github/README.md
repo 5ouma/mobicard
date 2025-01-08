@@ -4,17 +4,15 @@
 
 **📇 Turn your smartphone into a name card**
 
+<br />
+
 [![GitHub Release](https://img.shields.io/github/v/release/5ouma/mobicard?style=flat-square)](https://github.com/5ouma/mobicard/releases)
-<br />
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/5ouma/mobicard?style=flat-square)
-![GitHub repo size](https://img.shields.io/github/repo-size/5ouma/mobicard?style=flat-square)
-[![GitHub last commit](https://img.shields.io/github/last-commit/5ouma/mobicard?style=flat-square)](https://github.com/5ouma/mobicard/commit/HEAD)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/5ouma/mobicard?style=flat-square)](https://github.com/5ouma/mobicard/commits/main)
-<br />
 [![CI](https://img.shields.io/github/actions/workflow/status/5ouma/mobicard/ci.yml?label=ci&style=flat-square)](https://github.com/5ouma/mobicard/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/actions/workflow/status/5ouma/mobicard/release.yml?label=release&style=flat-square)](https://github.com/5ouma/mobicard/actions/workflows/release.yml)
 [![pre-commit](https://img.shields.io/github/actions/workflow/status/5ouma/mobicard/pre-commit.yml?label=pre-commit&style=flat-square)](https://github.com/5ouma/mobicard/actions/workflows/pre-commit.yml)
 [![codecov](https://codecov.io/github/5ouma/mobicard/graph/badge.svg)](https://codecov.io/github/5ouma/mobicard)
+
+![Repobeats Analytics Image](https://repobeats.axiom.co/api/embed/3d399f151e4fca968a226771b22d4ce8fc372183.svg)
 
 </div>
 
@@ -35,11 +33,11 @@
 3. Build and Preview the project
 
    ```sh
-   bun run build
+   npm run build
    ```
 
    ```sh
-   bun run preview
+   npm run preview
    ```
 
 <br /><br />
