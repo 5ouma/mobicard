@@ -29,8 +29,8 @@
     "@types/node": "22.10.6",
     "@types/qrcode": "1.5.5",
     "@vite-pwa/astro": "0.5.0",
-    "@vitest/coverage-v8": "2.1.8",
+    "@vitest/coverage-v8": "3.0.1",
     "astrobook": "0.7.0",
-    "vitest": "2.1.8"
+    "vitest": "3.0.1"
   }
 }
