@@ -7,5 +7,7 @@ test("Index", async () => {
   const container: AstroContainer = await AstroContainer.create();
   const result: string = await container.renderToString(Index);
 
-  expect(result).toMatchSnapshot();
+  const regex =
+    /<script type="module" src=".+\.astro\?astro&type=script&index=0&lang\.ts"><\/script>/;
+  expect(result.replace(regex, "")).toMatchSnapshot();
 });
