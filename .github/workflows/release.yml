@@ -51,7 +51,7 @@ jobs:
         run: bun run build
 
       - name: ⛅️ Deploy to the Production
-        uses: cloudflare/wrangler-action@6d58852c35a27e6034745c5d0bc373d739014f7f # v3.13.0
+        uses: cloudflare/wrangler-action@7a5f8bbdfeedcde38e6777a50fe685f89259d4ca # v3.13.1
         with:
           command: pages deploy dist --project-name='${{ github.event.repository.name }}'
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
