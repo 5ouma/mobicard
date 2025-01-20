@@ -30,11 +30,6 @@ export const Misskey: Props = {
   id: "@support@misskey.io",
 };
 
-export const Posts: Props = {
-  service: "Posts",
-  id: "support",
-};
-
 export const Threads: Props = {
   service: "Threads",
   id: "@threads",

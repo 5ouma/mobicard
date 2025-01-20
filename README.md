@@ -93,7 +93,6 @@
 > - Instagram
 > - Mastodon
 > - Misskey
-> - Posts
 > - Threads
 > - Twitter
 > - YouTube

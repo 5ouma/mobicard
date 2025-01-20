@@ -25,7 +25,6 @@ export type sns = Readonly<{ url: string; icon: string; color: string }>;
  * @property Instagram Instagram
  * @property Mastodon Mastodon
  * @property Misskey Misskey
- * @property Posts Posts
  * @property Threads Threads
  * @property Twitter Twitter
  * @property YouTube YouTube
@@ -66,11 +65,6 @@ export const services = {
     url: "",
     icon: "simple-icons:misskey",
     color: "#A1CA03",
-  },
-  Posts: {
-    url: "posts.cv",
-    icon: "simple-icons:readdotcv",
-    color: "#111111",
   },
   Threads: {
     url: "threads.net",
