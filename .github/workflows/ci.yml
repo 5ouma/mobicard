@@ -8,14 +8,14 @@ on:
       - "**.astro"
       - "**.ts"
       - "**.snap"
-      - bun.lockb
+      - bun.lock
       - .github/workflows/ci.yml
   pull_request:
     paths:
       - "**.astro"
       - "**.ts"
       - "**.snap"
-      - bun.lockb
+      - bun.lock
       - .github/workflows/ci.yml
 
 jobs:
