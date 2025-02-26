@@ -18,7 +18,7 @@
     "@cxa/astro-inline-svg": "0.5.1",
     "@iconify-json/mingcute": "1.2.3",
     "@iconify-json/simple-icons": "1.2.26",
-    "astro": "5.3.0",
+    "astro": "5.3.1",
     "astro-icon": "1.1.5",
     "qrcode": "1.5.4",
     "typescript": "5.7.3"
