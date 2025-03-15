@@ -8,6 +8,8 @@ on:
       - bun.lock
       - "!**.test.ts"
 
+permissions: {}
+
 jobs:
   deploy:
     name: 🚀 Deploy to the Preview
