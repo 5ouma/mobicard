@@ -18,6 +18,8 @@ on:
       - bun.lock
       - .github/workflows/ci.yml
 
+permissions: {}
+
 jobs:
   astro-check:
     name: 🚀 Astro Check
