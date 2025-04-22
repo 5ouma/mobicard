@@ -15,12 +15,15 @@ jobs:
       contents: write
       pull-requests: write
     runs-on: Ubuntu-Latest
+    timeout-minutes: 1
     outputs:
       tag: ${{ steps.tagpr.outputs.tag }}
 
     steps:
       - name: 🚚 Checkout Repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
 
       - name: 🏷️ Release a New Version
         id: tagpr
@@ -38,13 +41,16 @@ jobs:
     needs: tagpr
     if: ${{ needs.tagpr.outputs.tag != '' }}
     runs-on: Ubuntu-Latest
+    timeout-minutes: 1
 
     steps:
       - name: 🚚 Checkout Repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
 
       - name: 🍞 Setup Bun with Cache
-        uses: 5ouma/utils/setup-bun-with-cache@main
+        uses: 5ouma/utils/setup-bun-with-cache@3d7fe8d0af9597d68e95f581c032b77813c024af # v0.1.1
 
       - name: 👾 Create a Meta File
         run: echo '${{ vars.META_FILE }}' >meta.json
