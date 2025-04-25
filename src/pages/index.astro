@@ -7,16 +7,12 @@ import Layout from "../layouts/Layout.astro";
 import meta from "../libs/meta.ts";
 ---
 
-<Layout title={meta.name} description={meta.description} icon={meta.icon.href}>
+<Layout title={meta.name} description={meta.description} icon={meta.icon}>
   <main>
     <div id="info">
-      <Bio
-        name={meta.name}
-        description={meta.description}
-        icon={meta.icon.href}
-      />
+      <Bio name={meta.name} description={meta.description} icon={meta.icon} />
       <div id="contacts">
-        <Access homepage={meta.homepage} email={meta.email} />
+        <Access homepage={new URL(meta.homepage)} email={meta.email} />
         <ul aria-label="Contacts">
           {
             meta.sns.map(({ service, id }) => (
@@ -28,7 +24,7 @@ import meta from "../libs/meta.ts";
         </ul>
       </div>
     </div>
-    <Card url={meta.card} />
+    <Card url={new URL(meta.card)} />
   </main>
 </Layout>
 

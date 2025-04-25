@@ -1,14 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
 
+import type { serviceName } from "../../constants/sns.ts";
 import { getSNS } from "../../libs/sns.ts";
-import type { serviceName, sns } from "../../types/services.ts";
 import "../../styles/global.css";
 
 export type Props = { service: serviceName; id: string };
 const { service, id } = Astro.props;
 
-const { url, icon, color }: sns = getSNS(service, id);
+const { url, icon, color } = getSNS(service, id);
 ---
 
 <a
