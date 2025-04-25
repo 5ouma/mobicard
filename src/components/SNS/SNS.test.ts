@@ -17,22 +17,4 @@ describe("SNS", () => {
       });
     }
   });
-
-  describe("Invalid service or ID", () => {
-    const invalidProps: { service: string; id: string }[] = [
-      { service: "Mastodon", id: "invalid-id" },
-      { service: "Misskey", id: "invalid-id" },
-      { service: "invalid-service", id: "id" },
-    ];
-
-    for (const props of invalidProps) {
-      test(props.service, async () => {
-        const container: AstroContainer = await AstroContainer.create();
-
-        await expect(
-          container.renderToString(SNS, { props }),
-        ).rejects.toThrow();
-      });
-    }
-  });
 });

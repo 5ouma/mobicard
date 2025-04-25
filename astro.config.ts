@@ -5,9 +5,10 @@ import { defineConfig } from "astro/config";
 import astrobook from "astrobook";
 
 import meta from "./src/libs/meta.ts";
+const iconURL = new URL(meta.icon);
 
 export default defineConfig({
-  site: meta.card.href,
+  site: meta.card,
   integrations: [
     sitemap(),
     icon(),
@@ -16,7 +17,7 @@ export default defineConfig({
         name: meta.name,
         short_name: meta.name,
         description: meta.description,
-        icons: [{ src: meta.icon.href }],
+        icons: [{ src: meta.icon }],
         orientation: "landscape",
         display: "fullscreen",
         theme_color: "#f4f4f4",
@@ -34,9 +35,9 @@ export default defineConfig({
   image: {
     remotePatterns: [
       {
-        protocol: meta.icon.protocol.replace(":", ""),
-        hostname: meta.icon.hostname,
-        pathname: meta.icon.pathname,
+        protocol: iconURL.protocol.replace(":", ""),
+        hostname: iconURL.hostname,
+        pathname: iconURL.pathname,
       },
     ],
   },

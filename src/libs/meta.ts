@@ -1,5 +1,7 @@
+import { parse } from "valibot";
+
 import data from "../../meta.json";
-import type { meta } from "../types/meta.ts";
+import { metaSchema } from "../schemas/meta.ts";
 
 /**
  * Meta data from meta.json.
@@ -10,9 +12,4 @@ import type { meta } from "../types/meta.ts";
  * console.log(meta);
  * ```
  */
-export default {
-  ...data,
-  icon: new URL(data.icon),
-  homepage: new URL(data.homepage),
-  card: new URL(data.card),
-} as meta;
+export default parse(metaSchema, data);
