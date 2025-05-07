@@ -28,7 +28,7 @@ jobs:
           persist-credentials: false
 
       - name: 🍞 Setup Bun with Cache
-        uses: 5ouma/utils/setup-bun-with-cache@3d7fe8d0af9597d68e95f581c032b77813c024af # v0.1.1
+        uses: 5ouma/utils/setup-bun-with-cache@5a1790ce25b801555b0202b0ce7aa98ee456951e # v0.1.2
 
       - name: 👾 Create a Meta File
         run: echo '${{ vars.META_TEST_FILE }}' >meta.json
