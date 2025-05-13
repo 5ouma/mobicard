@@ -69,7 +69,7 @@ jobs:
         with:
           result-encoding: string
           script: |
-            const { manifest } = process.env;
+            const manifest = JSON.parse(process.env.MANIFEST);
             const summary = manifest.reduce((sum, { summary }) => {
               for (const label in summary) sum[label] = (sum[label] || 0) + summary[label];
               return sum;
