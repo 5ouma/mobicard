@@ -49,8 +49,13 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: 🍞 Setup Bun with Cache
-        uses: 5ouma/utils/setup-bun-with-cache@5d4d9189866ac7eb6c2d0534cf535f3f1f571cff # v0.1.4
+      - name: 🍞 Setup Bun
+        uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2.0.2
+        with:
+          no-cache: true
+
+      - name: 📦 Install Dependencies
+        run: bun install --frozen-lockfile
 
       - name: 👾 Create a Meta File
         env:
