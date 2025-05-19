@@ -50,7 +50,7 @@ jobs:
           persist-credentials: false
 
       - name: 🍞 Setup Bun with Cache
-        uses: 5ouma/utils/setup-bun-with-cache@b4cff9e76103ffe4d14c9812f9a2262b7994a3b3 # v0.2.0
+        uses: 5ouma/utils/setup-bun-with-cache@e9f6b5e242c44ae969f2f39d11aee713d1ac7055 # v0.2.1
 
       - name: 👾 Create a Meta File
         env:
