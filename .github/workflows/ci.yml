@@ -33,7 +33,7 @@ jobs:
           persist-credentials: false
 
       - name: 🍞 Setup Bun with Cache
-        uses: 5ouma/utils/setup-bun-with-cache@5b52f10a8f1aed51845efb3b3bb0ad822d43d706 # v0.3.0
+        uses: 5ouma/utils/setup-bun-with-cache@35e2cccab72316555c4c01855a8ebebffeb45aa2 # v0.4.0
 
       - name: 👾 Create a Meta File
         env:
@@ -55,7 +55,7 @@ jobs:
           persist-credentials: false
 
       - name: 🍞 Setup Bun with Cache
-        uses: 5ouma/utils/setup-bun-with-cache@5b52f10a8f1aed51845efb3b3bb0ad822d43d706 # v0.3.0
+        uses: 5ouma/utils/setup-bun-with-cache@35e2cccab72316555c4c01855a8ebebffeb45aa2 # v0.4.0
 
       - name: 🏞️ Biome Check
         run: bun run check:biome
@@ -72,7 +72,7 @@ jobs:
           persist-credentials: false
 
       - name: 🍞 Setup Bun with Cache
-        uses: 5ouma/utils/setup-bun-with-cache@5b52f10a8f1aed51845efb3b3bb0ad822d43d706 # v0.3.0
+        uses: 5ouma/utils/setup-bun-with-cache@35e2cccab72316555c4c01855a8ebebffeb45aa2 # v0.4.0
 
       - name: 👾 Create a Meta File
         env:
@@ -105,7 +105,7 @@ jobs:
           persist-credentials: false
 
       - name: 🍞 Setup Bun with Cache
-        uses: 5ouma/utils/setup-bun-with-cache@5b52f10a8f1aed51845efb3b3bb0ad822d43d706 # v0.3.0
+        uses: 5ouma/utils/setup-bun-with-cache@35e2cccab72316555c4c01855a8ebebffeb45aa2 # v0.4.0
 
       - name: 👾 Create a Meta File
         env:
