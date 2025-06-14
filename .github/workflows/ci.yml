@@ -27,20 +27,20 @@ jobs:
     timeout-minutes: 1
 
     steps:
-      - name: 🚚 Checkout Repository
+      - name: 🚚 Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: false
 
-      - name: 🍞 Setup Bun with Cache
+      - name: 🍞 Setup Bun with cache
         uses: 5ouma/utils/setup-bun-with-cache@084665e94a15908074ca1400dd51b48243674167 # v0.4.1
 
-      - name: 👾 Create a Meta File
+      - name: 👾 Create meta file
         env:
           META_TEST_FILE: ${{ vars.META_TEST_FILE }}
         run: echo "$META_TEST_FILE" >meta.json
 
-      - name: 🚀 Astro Check
+      - name: 🚀 Astro check
         run: bun run check:astro
 
   biome-check:
@@ -49,7 +49,7 @@ jobs:
     timeout-minutes: 1
 
     steps:
-      - name: 🚚 Checkout Repository
+      - name: 🚚 Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: false
@@ -57,7 +57,7 @@ jobs:
       - name: 🍞 Setup Bun with Cache
         uses: 5ouma/utils/setup-bun-with-cache@084665e94a15908074ca1400dd51b48243674167 # v0.4.1
 
-      - name: 🏞️ Biome Check
+      - name: 🏞️ Biome check
         run: bun run check:biome
 
   test:
@@ -66,28 +66,28 @@ jobs:
     timeout-minutes: 1
 
     steps:
-      - name: 🚚 Checkout Repository
+      - name: 🚚 Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: false
 
-      - name: 🍞 Setup Bun with Cache
+      - name: 🍞 Setup Bun with cache
         uses: 5ouma/utils/setup-bun-with-cache@084665e94a15908074ca1400dd51b48243674167 # v0.4.1
 
-      - name: 👾 Create a Meta File
+      - name: 👾 Create meta file
         env:
           META_TEST_FILE: ${{ vars.META_TEST_FILE }}
         run: echo "$META_TEST_FILE" >meta.json
 
-      - name: 🧪 Run Tests
+      - name: 🧪 Run tests
         run: bun run test:cov
 
-      - name: ☂️ Upload Coverage
+      - name: ☂️ Upload coverage
         uses: codecov/codecov-action@18283e04ce6e62d37312384ff67231eb8fd56d24 # v5.4.3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
-      - name: ☂️ Upload Test Results
+      - name: ☂️ Upload test results
         if: ${{ !cancelled() }}
         uses: codecov/test-results-action@47f89e9acb64b76debcd5ea40642d25a4adced9f # v1.1.1
         with:
@@ -99,18 +99,18 @@ jobs:
     timeout-minutes: 1
 
     steps:
-      - name: 🚚 Checkout Repository
+      - name: 🚚 Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: false
 
-      - name: 🍞 Setup Bun with Cache
+      - name: 🍞 Setup Bun with cache
         uses: 5ouma/utils/setup-bun-with-cache@084665e94a15908074ca1400dd51b48243674167 # v0.4.1
 
-      - name: 👾 Create a Meta File
+      - name: 👾 Create meta file
         env:
           META_TEST_FILE: ${{ vars.META_TEST_FILE }}
         run: echo "$META_TEST_FILE" >meta.json
 
-      - name: 🛠️ Build Check
+      - name: 🛠️ Build check
         run: bun run build

@@ -10,7 +10,7 @@ permissions: {}
 
 jobs:
   tagpr:
-    name: 🏷️ Release a New Version
+    name: 🔖 Release a New Version
     permissions:
       contents: write
       pull-requests: write
@@ -20,12 +20,12 @@ jobs:
       tag: ${{ steps.tagpr.outputs.tag }}
 
     steps:
-      - name: 🚚 Checkout Repository
+      - name: 🚚 Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: true
 
-      - name: 🏷️ Release a New Version
+      - name: 🔖 Release a new version
         id: tagpr
         uses: Songmu/tagpr@812f0c28980cb9a1e5cf427b65c1ac6a1d2b4377 # v1.6.1
         with:
@@ -34,7 +34,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
-    name: 🚀 Deploy to the Production
+    name: 🚀 Deploy to Production
     permissions:
       contents: read
       deployments: write
@@ -44,15 +44,15 @@ jobs:
     timeout-minutes: 1
 
     steps:
-      - name: 🚚 Checkout Repository
+      - name: 🚚 Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: false
 
-      - name: 🍞 Setup Bun with Cache
+      - name: 🍞 Setup bun with cache
         uses: 5ouma/utils/setup-bun-with-cache@084665e94a15908074ca1400dd51b48243674167 # v0.4.1
 
-      - name: 👾 Create a Meta File
+      - name: 👾 Create meta file
         env:
           META_FILE: ${{ vars.META_FILE }}
         run: echo "$META_FILE" >meta.json
@@ -60,7 +60,7 @@ jobs:
       - name: 🛠️ Build
         run: bun run build
 
-      - name: ⛅️ Deploy to the Production
+      - name: ⛅️ Deploy to production
         uses: cloudflare/wrangler-action@da0e0dfe58b7a431659754fdf3f186c529afbe65 # v3.14.1
         with:
           command: pages deploy dist --project-name='${{ github.event.repository.name }}'
