@@ -12,7 +12,7 @@ permissions: {}
 
 jobs:
   deploy:
-    name: 🚀 Deploy to the Preview
+    name: 🚀 Deploy to Preview
     permissions:
       contents: read
       deployments: write
@@ -22,15 +22,15 @@ jobs:
       url: ${{ steps.deploy.outputs.deployment-url }}
 
     steps:
-      - name: 🚚 Checkout Repository
+      - name: 🚚 Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: false
 
-      - name: 🍞 Setup Bun with Cache
+      - name: 🍞 Setup bun with cache
         uses: 5ouma/utils/setup-bun-with-cache@084665e94a15908074ca1400dd51b48243674167 # v0.4.1
 
-      - name: 👾 Create a Meta File
+      - name: 👾 Create meta file
         env:
           META_TEST_FILE: ${{ vars.META_TEST_FILE }}
         run: echo "$META_TEST_FILE" >meta.json
@@ -38,7 +38,7 @@ jobs:
       - name: 🛠️ Build
         run: bun run build
 
-      - name: ⛅️ Deploy to the Preview
+      - name: ⛅️ Deploy to preview
         id: deploy
         uses: cloudflare/wrangler-action@da0e0dfe58b7a431659754fdf3f186c529afbe65 # v3.14.1
         with:
@@ -47,7 +47,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
-  lighthouse:
+  analyze-performance:
     name: 🔦 Analyze Performance
     permissions:
       pull-requests: write
@@ -56,14 +56,14 @@ jobs:
     timeout-minutes: 2
 
     steps:
-      - name: 🔦 Analyze Performance with Lighthouse
+      - name: 🔦 Analyze performance
         id: lighthouse
         uses: treosh/lighthouse-ci-action@2f8dda6cf4de7d73b29853c3f29e73a01e297bd8 # 12.1.0
         with:
           urls: ${{ needs.deploy.outputs.url }}
           runs: 3
 
-      - name: 📊 Arrange the Summary
+      - name: 📊 Arrange summary
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
         id: summary
         with:
@@ -74,18 +74,18 @@ jobs:
               for (const label in summary) sum[label] = (sum[label] || 0) + summary[label];
               return sum;
             }, {});
-            const gauge = Object.entries(summary).map(([label, percentage]) => {
+            const results = Object.entries(summary).map(([label, percentage]) => {
               const score = Math.round(percentage / manifest.length * 100);
               const icon = score >= 90 ? "🟢" : score >= 50 ? "🟧" : "🔺";
               return { label, score: `${icon} ${score}` };
             });
-            const labels = `| ${gauge.map(({ label }) => label).join(" | ")} |`;
-            const scores = `| ${gauge.map(({ score }) => score).join(" | ")} |`;
-            return `${labels}\n| ${gauge.map(() => ":-:").join(" | ")} |\n${scores}`;
+            const labels = `| ${results.map(({ label }) => label).join(" | ")} |`;
+            const scores = `| ${results.map(({ score }) => score).join(" | ")} |`;
+            return `${labels}\n| ${results.map(() => ":-:").join(" | ")} |\n${scores}`;
         env:
           MANIFEST: ${{ steps.lighthouse.outputs.manifest }}
 
-      - name: 💬 Comment the Result
+      - name: 💬 Comment result
         uses: mshick/add-pr-comment@b8f338c590a895d50bcbfa6c5859251edc8952fc # v2.8.2
         with:
           message: |
