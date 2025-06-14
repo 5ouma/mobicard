@@ -21,7 +21,7 @@
         "@types/qrcode": "1.5.5",
         "@vite-pwa/astro": "1.1.0",
         "@vitest/coverage-v8": "3.2.3",
-        "astrobook": "0.8.2",
+        "astrobook": "0.8.3",
         "vitest": "3.2.3",
       },
     },
@@ -35,11 +35,11 @@
 
     "@apideck/better-ajv-errors": ["@apideck/better-ajv-errors@0.3.6", "", { "dependencies": { "json-schema": "^0.4.0", "jsonpointer": "^5.0.0", "leven": "^3.1.0" }, "peerDependencies": { "ajv": ">=8" } }, "sha512-P+ZygBLZtkp0qqOAJJVX4oX/sFo5JR3eBWwwuqHHhK0GIgQOKWrAfiAaWX0aArHkRWHMuggFEgAZNxVPwPZYaA=="],
 
-    "@astrobook/core": ["@astrobook/core@0.8.2", "", { "dependencies": { "@astrobook/types": "0.8.2", "@sveltejs/acorn-typescript": "^1.0.5", "acorn": "^8.14.1", "fdir": "^6.4.5", "picomatch": "^4.0.2", "slash": "^5.1.0" } }, "sha512-ExGUcJTDnCFDHm/aBXLTqZa7lL3FexnhyrYgjq29dmIATLA8afXvKWL3xpKYTh9umdOh/T6SP0KDoK2Ab8Lm5g=="],
+    "@astrobook/core": ["@astrobook/core@0.8.3", "", { "dependencies": { "@astrobook/types": "0.8.3", "@sveltejs/acorn-typescript": "^1.0.5", "acorn": "^8.14.1", "fdir": "^6.4.5", "picomatch": "^4.0.2", "slash": "^5.1.0" } }, "sha512-19wnB9uMRtvkatb/MLHRA7Ypve6SKIgW3B1Vy+D+2WdeVXOyfteqLf8WjbJdTyQB45cYcyxdZxdsbOhs49ZWww=="],
 
-    "@astrobook/types": ["@astrobook/types@0.8.2", "", {}, "sha512-WQY3X7OBIcWFXXxabGUweaJAZ3bcIkuXQs52y6423rVoi/IR7APJClLpjJ94tMyn5I3M6QVNSjSEiF6ZiyQ/rA=="],
+    "@astrobook/types": ["@astrobook/types@0.8.3", "", {}, "sha512-uPHnT2lAs0+uYoRZhSW5feuai0pPLLSipE1JIsoDAbaOJ6xQYDdfvrPiY9RlOsRxzcGSSaqXDD4/4Kt0gLvgNA=="],
 
-    "@astrobook/ui": ["@astrobook/ui@0.8.2", "", { "dependencies": { "@astrobook/core": "0.8.2", "@astrobook/types": "0.8.2", "astro-theme-toggle": "^0.6.0", "just-group-by": "^2.2.0" }, "peerDependencies": { "astro": ">=4.0.0" }, "optionalPeers": ["astro"] }, "sha512-2351reThdLPTYGTHU6flaPN3CNbXQginWn1a2Cht48eJ6dGoRlBaEXMUtts6id3FQHut+N2hsNP73QYGxgwtSw=="],
+    "@astrobook/ui": ["@astrobook/ui@0.8.3", "", { "dependencies": { "@astrobook/core": "0.8.3", "@astrobook/types": "0.8.3", "astro-theme-toggle": "^0.6.1", "just-group-by": "^2.2.0" }, "peerDependencies": { "astro": ">=4.0.0" }, "optionalPeers": ["astro"] }, "sha512-v8tS6GKujpX55sYS1igpwwER90tfn4LUK6aFTyzfjLBPf8zdWP2YxYrrMAMFl1IxhbDyGkHkgwTXPAJtbgXYyg=="],
 
     "@astrojs/check": ["@astrojs/check@0.9.4", "", { "dependencies": { "@astrojs/language-server": "^2.15.0", "chokidar": "^4.0.1", "kleur": "^4.1.5", "yargs": "^17.7.2" }, "peerDependencies": { "typescript": "^5.0.0" }, "bin": { "astro-check": "dist/bin.js" } }, "sha512-IOheHwCtpUfvogHHsvu0AbeRZEnjJg3MopdLddkJE70mULItS/Vh37BHcI00mcOJcH1vhD3odbpvWokpxam7xA=="],
 
@@ -573,9 +573,9 @@
 
     "astro-icon": ["astro-icon@1.1.5", "", { "dependencies": { "@iconify/tools": "^4.0.5", "@iconify/types": "^2.0.0", "@iconify/utils": "^2.1.30" } }, "sha512-CJYS5nWOw9jz4RpGWmzNQY7D0y2ZZacH7atL2K9DeJXJVaz7/5WrxeyIxO8KASk1jCM96Q4LjRx/F3R+InjJrw=="],
 
-    "astro-theme-toggle": ["astro-theme-toggle@0.6.0", "", {}, "sha512-Pe2DTeckxJaspMXNWbHzhn3fQq6K4JTEZ/Gutehgty6qzfLWehsGPFtsKOhsS0r2EOK18MaUnONliE5+sDBLYw=="],
+    "astro-theme-toggle": ["astro-theme-toggle@0.6.1", "", {}, "sha512-UkU3ycEHnyl6M39rL3xXXwHfJKEKU0eSQS5dKEL+GInr+JS3jwpt/CCrS3jjc3IN/qVM8lv/gYXZpQx/Bu1Rlw=="],
 
-    "astrobook": ["astrobook@0.8.2", "", { "dependencies": { "@astrobook/core": "0.8.2", "@astrobook/types": "0.8.2", "@astrobook/ui": "0.8.2" }, "peerDependencies": { "astro": ">=4.0.0" }, "optionalPeers": ["astro"] }, "sha512-73JjMAnJR1A4vUh6KtQpGAYsGG9PcWHJzfDPHZHs14Qgkb8IA5UTV5F9qDcOuu/Yj8s49KIe9EaBXkqgAzGtTg=="],
+    "astrobook": ["astrobook@0.8.3", "", { "dependencies": { "@astrobook/core": "0.8.3", "@astrobook/types": "0.8.3", "@astrobook/ui": "0.8.3" }, "peerDependencies": { "astro": ">=4.0.0" }, "optionalPeers": ["astro"] }, "sha512-lCDz55vey3nnCZ632WpCNrYQR/0kjzyAGZAMSKhKeeV26ikBQwCwJilRZVdPnIRKN2bHED2DHHh5/D7gZ+U42g=="],
 
     "async": ["async@3.2.6", "", {}, "sha512-htCUDlxyyCLMgaM3xXg0C0LW2xqfuQ6p05pCEIsXuyQ+a1koYKTuBMzRNwmybfLgvJDMd0r1LTn4+E0Ti6C2AA=="],
 
