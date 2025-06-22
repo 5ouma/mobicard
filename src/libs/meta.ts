@@ -1,7 +1,11 @@
+import { readFile } from "node:fs/promises";
+
 import { parse } from "valibot";
 
-import data from "../../meta.json";
 import { metaSchema } from "../schemas/meta.ts";
+
+const file = await readFile("./meta.json", "utf-8");
+const data = JSON.parse(file);
 
 /**
  * Meta data from meta.json.
