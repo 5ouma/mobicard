@@ -24,13 +24,14 @@ export default defineConfig({
         theme_color: "#f4f4f4",
       },
       workbox: {
+        maximumFileSizeToCacheInBytes: process.env.ASTROBOOK
+          ? 1024 * 1024 * 8
+          : 2097152,
         globPatterns: ["**/*.{html,js,avif,webp,jpg}"],
         navigateFallback: "/",
       },
     }),
-    ...(process.env.ASTROBOOK
-      ? [astrobook({ directory: "src/components" })]
-      : []),
+    process.env.ASTROBOOK ? [astrobook({ directory: "src/components" })] : null,
   ],
   devToolbar: { enabled: process.env.NODE_ENV !== "test" },
   image: {
