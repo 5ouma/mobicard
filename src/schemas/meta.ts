@@ -1,5 +1,4 @@
 import {
-  url,
   array,
   email,
   nonEmpty,
@@ -7,6 +6,7 @@ import {
   optional,
   pipe,
   string,
+  url,
 } from "valibot";
 
 import { serviceSchema } from "./sns.ts";
