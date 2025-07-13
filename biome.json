@@ -5,5 +5,19 @@
     "clientKind": "git",
     "useIgnoreFile": true
   },
-  "formatter": { "indentStyle": "space" }
+  "formatter": { "indentStyle": "space" },
+  "css": { "formatter": { "enabled": true } },
+  "overrides": [
+    {
+      "includes": ["**/*.astro"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedImports": "off",
+            "noUnusedVariables": "off"
+          }
+        }
+      }
+    }
+  ]
 }

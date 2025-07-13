@@ -1,10 +1,11 @@
 import sitemap from "@astrojs/sitemap";
 import AstroPWA from "@vite-pwa/astro";
-import icon from "astro-icon";
 import { defineConfig } from "astro/config";
+import icon from "astro-icon";
 import astrobook from "astrobook";
 
 import meta from "./src/libs/meta.ts";
+
 const iconURL = new URL(meta.icon);
 
 export default defineConfig({

@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "0.9.4",
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.1.1",
     "@types/node": "24.0.13",
     "@types/qrcode": "1.5.5",
     "@vite-pwa/astro": "1.1.0",
