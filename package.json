@@ -4,8 +4,9 @@
   "version": "0.6.0",
   "scripts": {
     "dev": "astro dev",
-    "astrobook": "ASTROBOOK=1 astro dev",
+    "dev:astrobook": "ASTROBOOK=1 astro dev",
     "build": "astro build",
+    "build:astrobook": "ASTROBOOK=1 astro build",
     "preview": "astro preview",
     "check:astro": "astro check",
     "check:biome": "biome check",

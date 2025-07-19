@@ -39,7 +39,7 @@ jobs:
       - name: 🛠️ Build
         run: bun run build
 
-      - name: ⛅️ Deploy to preview
+      - name: ⛅️ Deploy to Cloudflare Workers
         id: deploy
         uses: cloudflare/wrangler-action@da0e0dfe58b7a431659754fdf3f186c529afbe65 # v3.14.1
         with:
@@ -103,3 +103,37 @@ jobs:
 
             </details>
           message-id: lighthouse
+
+  astrobook:
+    name: 📔 Deploy Astrobook
+    permissions:
+      contents: read
+      deployments: write
+    runs-on: Ubuntu-Latest
+    timeout-minutes: 1
+
+    steps:
+      - name: 🚚 Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: 🍞 Setup bun with cache
+        uses: 5ouma/utils/setup-bun-with-cache@0c621976149c4df5b90ad7d79f61a15bf969c815 # v0.4.2
+
+      - name: 👾 Create meta file
+        env:
+          META_TEST_FILE: ${{ vars.META_TEST_FILE }}
+        run: echo "$META_TEST_FILE" >meta.json
+
+      - name: 🛠️ Build
+        run: bun run build:astrobook
+
+      - name: ⛅️ Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@da0e0dfe58b7a431659754fdf3f186c529afbe65 # v3.14.1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: 4.25.0
+          command: versions upload --name=${{ github.event.repository.name }} --compatibility-date="$(date +%Y-%m-%d)" --assets=./dist --preview-alias=astrobook
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
