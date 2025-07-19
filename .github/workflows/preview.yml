@@ -6,6 +6,7 @@ on:
       - "**.astro"
       - "**.ts"
       - bun.lock
+      - .github/workflows/preview.yml
       - "!**.test.ts"
 
 permissions: {}
@@ -42,9 +43,10 @@ jobs:
         id: deploy
         uses: cloudflare/wrangler-action@da0e0dfe58b7a431659754fdf3f186c529afbe65 # v3.14.1
         with:
-          command: deploy --name=${{ github.event.repository.name }} --compatibility-date="$(date +%Y-%m-%d)" --assets=./dist
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: 4.25.0
+          command: versions upload --name=${{ github.event.repository.name }} --compatibility-date="$(date +%Y-%m-%d)" --assets=./dist --preview-alias=preview
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
   analyze-performance:
