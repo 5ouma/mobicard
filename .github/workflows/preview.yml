@@ -6,6 +6,7 @@ on:
       - "**.astro"
       - "**.ts"
       - bun.lock
+      - .github/workflows/preview.yml
       - "!**.test.ts"
 
 permissions: {}
