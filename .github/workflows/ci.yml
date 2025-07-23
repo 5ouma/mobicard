@@ -36,9 +36,9 @@ jobs:
         uses: 5ouma/utils/setup-bun-with-cache@101f4fede23a8f5987ba1ddc378628d99af5163a # v0.4.3
 
       - name: 👾 Create meta file
+        run: echo "$META_TEST_FILE" >meta.json
         env:
           META_TEST_FILE: ${{ vars.META_TEST_FILE }}
-        run: echo "$META_TEST_FILE" >meta.json
 
       - name: 🚀 Astro check
         run: bun run check:astro
@@ -75,9 +75,9 @@ jobs:
         uses: 5ouma/utils/setup-bun-with-cache@101f4fede23a8f5987ba1ddc378628d99af5163a # v0.4.3
 
       - name: 👾 Create meta file
+        run: echo "$META_TEST_FILE" >meta.json
         env:
           META_TEST_FILE: ${{ vars.META_TEST_FILE }}
-        run: echo "$META_TEST_FILE" >meta.json
 
       - name: 🧪 Run tests
         run: bun run test:cov
@@ -108,9 +108,9 @@ jobs:
         uses: 5ouma/utils/setup-bun-with-cache@101f4fede23a8f5987ba1ddc378628d99af5163a # v0.4.3
 
       - name: 👾 Create meta file
+        run: echo "$META_TEST_FILE" >meta.json
         env:
           META_TEST_FILE: ${{ vars.META_TEST_FILE }}
-        run: echo "$META_TEST_FILE" >meta.json
 
       - name: 🛠️ Build check
         run: bun run build
