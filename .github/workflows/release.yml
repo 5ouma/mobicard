@@ -26,7 +26,7 @@ jobs:
           permission-contents: write
           permission-pull-requests: write
 
-      - name: 🚚 Checkout repository
+      - name: 🚚 Check out repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           token: ${{ steps.app-token.outputs.token }}
@@ -51,12 +51,12 @@ jobs:
     timeout-minutes: 1
 
     steps:
-      - name: 🚚 Checkout repository
+      - name: 🚚 Check out repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           persist-credentials: false
 
-      - name: 🍞 Setup bun with cache
+      - name: 🍞 Set up bun with cache
         uses: 5ouma/utils/setup-bun-with-cache@d5ab9f3aeb93aa4a47b02cbbd156ae7ecf259c16 # v0.4.4
 
       - name: 👾 Create meta file
