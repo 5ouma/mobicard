@@ -32,9 +32,9 @@ jobs:
         uses: 5ouma/utils/setup-bun-with-cache@d5ab9f3aeb93aa4a47b02cbbd156ae7ecf259c16 # v0.4.4
 
       - name: 👾 Create meta file
-        run: echo "$META_TEST_FILE" >meta.json
+        run: echo "$meta" >meta.json
         env:
-          META_TEST_FILE: ${{ vars.META_TEST_FILE }}
+          meta: ${{ vars.META_TEST_FILE }}
 
       - name: 🛠️ Build
         run: bun run build
@@ -71,7 +71,7 @@ jobs:
         with:
           result-encoding: string
           script: |
-            const manifest = JSON.parse(process.env.MANIFEST);
+            const manifest = JSON.parse(process.env.manifest);
             const summary = manifest.reduce((sum, { summary }) => {
               for (const label in summary) sum[label] = (sum[label] || 0) + summary[label];
               return sum;
@@ -85,7 +85,7 @@ jobs:
             const scores = `| ${results.map(({ score }) => score).join(" | ")} |`;
             return `${labels}\n| ${results.map(() => ":-:").join(" | ")} |\n${scores}`;
         env:
-          MANIFEST: ${{ steps.lighthouse.outputs.manifest }}
+          manifest: ${{ steps.lighthouse.outputs.manifest }}
 
       - name: 💬 Comment result
         uses: mshick/add-pr-comment@b8f338c590a895d50bcbfa6c5859251edc8952fc # v2.8.2
@@ -122,9 +122,9 @@ jobs:
         uses: 5ouma/utils/setup-bun-with-cache@d5ab9f3aeb93aa4a47b02cbbd156ae7ecf259c16 # v0.4.4
 
       - name: 👾 Create meta file
-        run: echo "$META_TEST_FILE" >meta.json
+        run: echo "$meta" >meta.json
         env:
-          META_TEST_FILE: ${{ vars.META_TEST_FILE }}
+          meta: ${{ vars.META_TEST_FILE }}
 
       - name: 🛠️ Build
         run: bun run build:astrobook

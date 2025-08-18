@@ -60,9 +60,9 @@ jobs:
         uses: 5ouma/utils/setup-bun-with-cache@d5ab9f3aeb93aa4a47b02cbbd156ae7ecf259c16 # v0.4.4
 
       - name: 👾 Create meta file
-        run: echo "$META_FILE" >meta.json
+        run: echo "$meta" >meta.json
         env:
-          META_FILE: ${{ vars.META_FILE }}
+          meta: ${{ vars.META_FILE }}
 
       - name: 🛠️ Build
         run: bun run build
