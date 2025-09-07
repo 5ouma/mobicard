@@ -34,7 +34,7 @@ jobs:
 
       - name: 🔖 Release a new version
         id: tagpr
-        uses: Songmu/tagpr@ebb5da0cccdb47c533d4b520ebc0acd475b16614 # v1.7.0
+        uses: Songmu/tagpr@5f88955ce2b34f19868a8c9cbe3baf6b73176f7b # v1.7.2
         with:
           config: .github/tagpr.ini
         env:
