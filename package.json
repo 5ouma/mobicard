@@ -1,7 +1,7 @@
 {
   "name": "mobicard",
   "type": "module",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "scripts": {
     "dev": "astro dev",
     "dev:astrobook": "ASTROBOOK=1 astro dev",
