@@ -5,7 +5,7 @@
       "name": "mobicard",
       "dependencies": {
         "@astrojs/sitemap": "3.5.1",
-        "@cxa/astro-inline-svg": "0.5.1",
+        "@cxa/astro-inline-svg": "0.6.0",
         "@iconify-json/mingcute": "1.2.5",
         "@iconify-json/simple-icons": "1.2.53",
         "astro": "5.13.5",
@@ -257,7 +257,7 @@
 
     "@capsizecss/unpack": ["@capsizecss/unpack@2.4.0", "", { "dependencies": { "blob-to-buffer": "^1.2.8", "cross-fetch": "^3.0.4", "fontkit": "^2.0.2" } }, "sha512-GrSU71meACqcmIUxPYOJvGKF0yryjN/L1aCuE9DViCTJI7bfkjgYDPD1zbNDcINJwSSP6UaBZY9GAbYDO7re0Q=="],
 
-    "@cxa/astro-inline-svg": ["@cxa/astro-inline-svg@0.5.1", "", { "dependencies": { "node-html-parser": "^6.1.13" }, "peerDependencies": { "astro": "^4.0.0", "typescript": "^5.0.0" } }, "sha512-EGBr2L/Rxh6ukYWlx4qfzg9gdyBU7ZmWcScBApXfYfGw3MTIeSloyLNJR6bIgEvRWlkPNE4YiNf7h/hIAq0wRw=="],
+    "@cxa/astro-inline-svg": ["@cxa/astro-inline-svg@0.6.0", "", { "dependencies": { "node-html-parser": "^6.1.13" }, "peerDependencies": { "astro": ">=4.0.0", "typescript": "^5.0.0" } }, "sha512-jOxiIOBkkOcn+yObT7KQ1vKIJZVJ7EI9rP78HG8kINMt7Ayv4Gq2Korw6kANbLQGL55PKncaM56d3sKrhJEmsA=="],
 
     "@emmetio/abbreviation": ["@emmetio/abbreviation@2.3.3", "", { "dependencies": { "@emmetio/scanner": "^1.0.4" } }, "sha512-mgv58UrU3rh4YgbE/TzgLQwJ3pFsHHhCLqY20aJq+9comytTXUDNGG/SMtSeMJdkpxgXSXunBGLD8Boka3JyVA=="],
 
