@@ -22,7 +22,7 @@
     "astro": "5.13.5",
     "astro-icon": "1.1.5",
     "qrcode": "1.5.4",
-    "typescript": "5.9.2",
+    "typescript": "5.9.3",
     "valibot": "1.1.0"
   },
   "devDependencies": {
