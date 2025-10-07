@@ -18,7 +18,7 @@
     "@astrojs/sitemap": "3.5.1",
     "@cxa/astro-inline-svg": "0.6.0",
     "@iconify-json/mingcute": "1.2.5",
-    "@iconify-json/simple-icons": "1.2.53",
+    "@iconify-json/simple-icons": "1.2.54",
     "astro": "5.13.5",
     "astro-icon": "1.1.5",
     "qrcode": "1.5.4",
