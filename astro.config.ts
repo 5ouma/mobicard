@@ -1,4 +1,3 @@
-import sitemap from "@astrojs/sitemap";
 import AstroPWA from "@vite-pwa/astro";
 import { defineConfig } from "astro/config";
 import icon from "astro-icon";
@@ -11,7 +10,6 @@ const iconURL = new URL(meta.icon);
 export default defineConfig({
   site: meta.card,
   integrations: [
-    sitemap(),
     icon(),
     AstroPWA({
       manifest: {
