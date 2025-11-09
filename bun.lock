@@ -1,5 +1,6 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
       "name": "mobicard",
@@ -19,7 +20,7 @@
         "@types/node": "24.10.0",
         "@types/qrcode": "1.5.6",
         "@vitest/coverage-v8": "3.2.4",
-        "astrobook": "0.10.0",
+        "astrobook": "0.11.0",
         "typescript": "5.9.3",
         "vitest": "3.2.4",
       },
@@ -34,11 +35,11 @@
 
     "@apideck/better-ajv-errors": ["@apideck/better-ajv-errors@0.3.6", "", { "dependencies": { "json-schema": "^0.4.0", "jsonpointer": "^5.0.0", "leven": "^3.1.0" }, "peerDependencies": { "ajv": ">=8" } }, "sha512-P+ZygBLZtkp0qqOAJJVX4oX/sFo5JR3eBWwwuqHHhK0GIgQOKWrAfiAaWX0aArHkRWHMuggFEgAZNxVPwPZYaA=="],
 
-    "@astrobook/core": ["@astrobook/core@0.10.0", "", { "dependencies": { "@astrobook/types": "0.10.0", "@sveltejs/acorn-typescript": "^1.0.6", "acorn": "^8.15.0", "fdir": "^6.5.0", "picomatch": "^4.0.3", "slash": "^5.1.0", "valibot": "^1.1.0", "yoctocolors": "^2.1.2" } }, "sha512-7nyuMOxALEX/jjY5aPIbDluy4heflK2vBf/EnllzJs1JjAu0fPl765WK5Ci9gEl+avCILejC2SLGYcu28/HAUA=="],
+    "@astrobook/core": ["@astrobook/core@0.11.0", "", { "dependencies": { "@astrobook/types": "0.11.0", "@sveltejs/acorn-typescript": "^1.0.6", "acorn": "^8.15.0", "fdir": "^6.5.0", "picomatch": "^4.0.3", "slash": "^5.1.0", "valibot": "^1.1.0", "yoctocolors": "^2.1.2" } }, "sha512-k+ircQBpE6h4cs9KQpFaNUkXspF2IUlknKoTTIStKAIBPKYd8u9oDB5rw0McGMdC47BYS8i677TjF2n4prftPw=="],
 
-    "@astrobook/types": ["@astrobook/types@0.10.0", "", { "peerDependencies": { "astro": ">=4.0.0" }, "optionalPeers": ["astro"] }, "sha512-uy9RGWyBk6AiZnndXWbNeOUur+/Q/58bZGGgut29Au1H7ovxdGyIt4cekdRW73fXnksFqDlkrjm2dTJ7F0/+Jg=="],
+    "@astrobook/types": ["@astrobook/types@0.11.0", "", { "peerDependencies": { "astro": ">=4.0.0" }, "optionalPeers": ["astro"] }, "sha512-XweycYWF5NYjYugBLae2v7YWfJQ/+B3DmZL+3y2ACIX1nyK160BczmJ2CaaEsQEb4dnJ2pURK0Z1GSdNtTiCzQ=="],
 
-    "@astrobook/ui": ["@astrobook/ui@0.10.0", "", { "dependencies": { "@astrobook/core": "0.10.0", "@astrobook/types": "0.10.0", "astro-theme-toggle": "^0.7.0", "just-group-by": "^2.2.0" }, "peerDependencies": { "astro": ">=5.0.0" }, "optionalPeers": ["astro"] }, "sha512-Sx5pBgd0oVhylh3GQGDu+dhk7b/QpnZR+krDPeUa6hwBmgixQzm4OIYwVwX5wOalfLKnTVhCB6ZOxtd9842PmQ=="],
+    "@astrobook/ui": ["@astrobook/ui@0.11.0", "", { "dependencies": { "@astrobook/core": "0.11.0", "@astrobook/types": "0.11.0", "astro-theme-toggle": "^0.8.0", "just-group-by": "^2.2.0" }, "peerDependencies": { "astro": ">=5.0.0" }, "optionalPeers": ["astro"] }, "sha512-7TqhBAU1tAeuF3J65UtqqnSsOzxA7ghogFZVCBfe1bWcPhjoSqGrVUEgUVwUaLcGCO2wWbebtdZ13j4UDqaEUw=="],
 
     "@astrojs/check": ["@astrojs/check@0.9.5", "", { "dependencies": { "@astrojs/language-server": "^2.15.0", "chokidar": "^4.0.1", "kleur": "^4.1.5", "yargs": "^17.7.2" }, "peerDependencies": { "typescript": "^5.0.0" }, "bin": { "astro-check": "dist/bin.js" } }, "sha512-88vc8n2eJ1Oua74yXSGo/8ABMeypfQPGEzuoAx2awL9Ju8cE6tZ2Rz9jVx5hIExHK5gKVhpxfZj4WXm7e32g1w=="],
 
@@ -572,9 +573,9 @@
 
     "astro-icon": ["astro-icon@1.1.5", "", { "dependencies": { "@iconify/tools": "^4.0.5", "@iconify/types": "^2.0.0", "@iconify/utils": "^2.1.30" } }, "sha512-CJYS5nWOw9jz4RpGWmzNQY7D0y2ZZacH7atL2K9DeJXJVaz7/5WrxeyIxO8KASk1jCM96Q4LjRx/F3R+InjJrw=="],
 
-    "astro-theme-toggle": ["astro-theme-toggle@0.7.0", "", {}, "sha512-HKZdtAWh8/IFvMS9yctF+ou51iFNtVaAjpa7Uw4dQMn591WWgFru7f4vmZwQUTttenSto01FjucPG9snDuBRhg=="],
+    "astro-theme-toggle": ["astro-theme-toggle@0.8.0", "", {}, "sha512-7ngEKDfCLKoVbxX4yxrggtBr8i6W8eT0un0TpNKHUeOG/Pq2g7BrjH+etP/l/XQYYSWQmeOIAI02LvLXDMvOWw=="],
 
-    "astrobook": ["astrobook@0.10.0", "", { "dependencies": { "@astrobook/core": "0.10.0", "@astrobook/types": "0.10.0", "@astrobook/ui": "0.10.0" }, "peerDependencies": { "astro": ">=4.0.0" }, "optionalPeers": ["astro"] }, "sha512-KW3hn6+Vt6ClbKIzJXh2t/uqIRjdIRQ0nbRE9J1zewiSW8gfl0rzchtQfw38UhSYN5PVfW1aO5hMecqh4tzCCg=="],
+    "astrobook": ["astrobook@0.11.0", "", { "dependencies": { "@astrobook/core": "0.11.0", "@astrobook/types": "0.11.0", "@astrobook/ui": "0.11.0" }, "peerDependencies": { "astro": ">=4.0.0" }, "optionalPeers": ["astro"] }, "sha512-YaWtrheldwtwg68Sgth1yQz8HlRQGfGEWnqrZQrCZfzh80GrqLpIh+5c38Tw2HJ+ho+8wd+C2JAjcpp9PG0JLw=="],
 
     "async": ["async@3.2.6", "", {}, "sha512-htCUDlxyyCLMgaM3xXg0C0LW2xqfuQ6p05pCEIsXuyQ+a1koYKTuBMzRNwmybfLgvJDMd0r1LTn4+E0Ti6C2AA=="],
 
