@@ -19,7 +19,7 @@
     "@iconify-json/mingcute": "1.2.5",
     "@iconify-json/simple-icons": "1.2.59",
     "@vite-pwa/astro": "1.1.1",
-    "astro": "5.15.9",
+    "astro": "5.16.0",
     "astro-icon": "1.1.5",
     "qrcode": "1.5.4",
     "valibot": "1.1.0"
