@@ -1,6 +1,4 @@
-<!-- markdownlint-disable MD041 -->
-
-### ⚠️ Issue
+### ⚠️ Issue <!-- rumdl-disable-line MD041 -->
 
 close #
 
