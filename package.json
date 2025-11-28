@@ -25,7 +25,7 @@
     "valibot": "1.2.0"
   },
   "devDependencies": {
-    "@astrojs/check": "0.9.5",
+    "@astrojs/check": "0.9.6",
     "@biomejs/biome": "2.3.7",
     "@types/node": "24.10.1",
     "@types/qrcode": "1.5.6",
