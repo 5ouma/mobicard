@@ -1,0 +1,15 @@
+{
+  "name": "Mobicard",
+  "description": "📇 Turn your smartphone into a name card",
+  "icon": "https://github.com/5ouma.png",
+  "homepage": "https://github.com/5ouma/mobicard",
+  "email": "email@example.com",
+  "sns": [
+    { "service": "Bluesky", "id": "bsky.app" },
+    { "service": "GitHub", "id": "github" },
+    { "service": "Instagram", "id": "instagram" },
+    { "service": "Mastodon", "id": "@Mastodon@mastodon.social" },
+    { "service": "Twitter", "id": "twitter" }
+  ],
+  "card": "https://mobicard.5ouma.workers.dev"
+}
