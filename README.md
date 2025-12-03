@@ -26,7 +26,7 @@
    npm create astro --template 5ouma/mobicard
    ```
 
-2. Copy the [`meta.tmpl.json`] to `meta.json` and edit as you prefer
+2. Copy the [`meta.example.json`] to `meta.json` and edit as you prefer
 
    > [👾 Meta File](#-meta-file)
 
@@ -50,7 +50,7 @@
    git clone https://github.com/5ouma/mobicard.git
    ```
 
-2. Copy the [`meta.tmpl.json`] to `meta.json` and edit as you prefer
+2. Copy the [`meta.example.json`] to `meta.json` and edit as you prefer
 
    > [👾 Meta File](#-meta-file)
 
@@ -82,7 +82,7 @@
 }
 ```
 
-[`meta.tmpl.json`]: ./meta.tmpl.json
+[`meta.example.json`]: ./meta.example.json
 
 > [!NOTE]
 > Valid contact services are:
