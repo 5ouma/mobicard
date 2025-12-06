@@ -11,7 +11,7 @@ permissions: {}
 jobs:
   tagpr:
     name: 🔖 Release a New Version
-    runs-on: Ubuntu-Latest
+    runs-on: Ubuntu-Slim
     timeout-minutes: 1
     outputs:
       tag: ${{ steps.tagpr.outputs.tag }}
@@ -47,7 +47,7 @@ jobs:
       deployments: write
     needs: tagpr
     if: ${{ needs.tagpr.outputs.tag != '' }}
-    runs-on: Ubuntu-Latest
+    runs-on: Ubuntu-Slim
     timeout-minutes: 1
 
     steps:

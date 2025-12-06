@@ -23,7 +23,7 @@ permissions: {}
 jobs:
   astro-check:
     name: 🚀 Astro Check
-    runs-on: Ubuntu-Latest
+    runs-on: Ubuntu-Slim
     timeout-minutes: 1
 
     steps:
@@ -43,7 +43,7 @@ jobs:
 
   biome-check:
     name: 🏞️ Biome Check
-    runs-on: Ubuntu-Latest
+    runs-on: Ubuntu-Slim
     timeout-minutes: 1
 
     steps:
@@ -60,7 +60,7 @@ jobs:
 
   test:
     name: 🧪 Test
-    runs-on: Ubuntu-Latest
+    runs-on: Ubuntu-Slim
     timeout-minutes: 1
 
     steps:
@@ -91,7 +91,7 @@ jobs:
 
   build-check:
     name: 🛠️ Build Check
-    runs-on: Ubuntu-Latest
+    runs-on: Ubuntu-Slim
     timeout-minutes: 1
 
     steps:
