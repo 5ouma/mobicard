@@ -10,7 +10,7 @@ jobs:
     name: 🏷️ Labeler
     permissions:
       pull-requests: write
-    runs-on: Ubuntu-Latest
+    runs-on: Ubuntu-Slim
     timeout-minutes: 1
 
     steps:
