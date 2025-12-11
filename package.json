@@ -17,7 +17,7 @@
   "dependencies": {
     "@cxa/astro-inline-svg": "0.6.0",
     "@iconify-json/mingcute": "1.2.5",
-    "@iconify-json/simple-icons": "1.2.61",
+    "@iconify-json/simple-icons": "1.2.62",
     "@vite-pwa/astro": "1.2.0",
     "astro": "5.16.4",
     "astro-icon": "1.1.5",
