@@ -57,7 +57,7 @@ jobs:
           persist-credentials: false
 
       - name: 🍞 Set up bun with cache
-        uses: 5ouma/utils/setup-bun-with-cache@f4ffd21171133eb7f4731b7a486daa153cd355a3 # v0.8.1
+        uses: 5ouma/utils/setup-bun-with-cache@1409b1a854917a5e6a05730772f815534e671981 # v0.8.2
 
       - name: 👾 Create meta file
         run: curl "$meta" -o meta.json
