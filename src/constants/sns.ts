@@ -67,7 +67,7 @@ export const services = {
   },
   Misskey: {
     url: null,
-    icon: "simple-icons:misskey",
+    icon: "mingcute:misskey",
     color: "#A1CA03",
   },
   Threads: {
