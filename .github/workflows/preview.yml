@@ -29,7 +29,7 @@ jobs:
           persist-credentials: false
 
       - name: 🍞 Set up bun with cache
-        uses: 5ouma/utils/setup-bun-with-cache@e3ddd062e52b578a512e70d94994624f5fa914cd # v0.9.0
+        uses: 5ouma/utils/setup-bun-with-cache@df69f0c1651b01a6d6074a6b6eb3a5be39e1d22a # v0.9.2
 
       - name: 👾 Create meta file
         run: cp meta.example.json meta.json
@@ -117,7 +117,7 @@ jobs:
           persist-credentials: false
 
       - name: 🍞 Set up bun with cache
-        uses: 5ouma/utils/setup-bun-with-cache@e3ddd062e52b578a512e70d94994624f5fa914cd # v0.9.0
+        uses: 5ouma/utils/setup-bun-with-cache@df69f0c1651b01a6d6074a6b6eb3a5be39e1d22a # v0.9.2
 
       - name: 👾 Create meta file
         run: cp meta.example.json meta.json
