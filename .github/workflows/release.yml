@@ -12,6 +12,7 @@ jobs:
   tagpr:
     name: 🔖 Release a New Version
     runs-on: Ubuntu-Slim
+    environment: Release
     timeout-minutes: 1
     outputs:
       tag: ${{ steps.tagpr.outputs.tag }}
@@ -21,7 +22,7 @@ jobs:
         id: app-token
         uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2.2.1
         with:
-          app-id: ${{ secrets.APP_ID }}
+          app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.PRIVATE_KEY }}
           permission-contents: write
           permission-pull-requests: write
@@ -48,6 +49,7 @@ jobs:
     needs: tagpr
     if: ${{ needs.tagpr.outputs.tag != '' }}
     runs-on: Ubuntu-Slim
+    environment: Release
     timeout-minutes: 1
 
     steps:

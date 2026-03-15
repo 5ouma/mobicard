@@ -61,6 +61,7 @@ jobs:
   test:
     name: 🧪 Test
     runs-on: Ubuntu-Slim
+    environment: CI
     timeout-minutes: 1
 
     steps:
