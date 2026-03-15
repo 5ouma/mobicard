@@ -30,7 +30,7 @@
     "@types/node": "25.4.0",
     "@types/qrcode": "1.5.6",
     "@vitest/coverage-v8": "4.0.18",
-    "astrobook": "0.12.2",
+    "astrobook": "0.12.3",
     "typescript": "5.9.3",
     "vitest": "4.0.18"
   }
