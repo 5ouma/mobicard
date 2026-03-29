@@ -12,7 +12,7 @@ jobs:
   pre-commit:
     name: 🚸 pre-commit
     runs-on: Ubuntu-Slim
-    timeout-minutes: 5
+    timeout-minutes: 10
 
     steps:
       - name: 🚸 Run pre-commit
