@@ -29,9 +29,9 @@
     "@biomejs/biome": "2.4.9",
     "@types/node": "25.5.0",
     "@types/qrcode": "1.5.6",
-    "@vitest/coverage-v8": "4.1.1",
+    "@vitest/coverage-v8": "4.1.2",
     "astrobook": "0.12.6",
     "typescript": "6.0.2",
-    "vitest": "4.1.1"
+    "vitest": "4.1.2"
   }
 }
