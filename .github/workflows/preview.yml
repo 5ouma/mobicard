@@ -18,7 +18,9 @@ jobs:
       contents: read
       deployments: write
     runs-on: Ubuntu-Slim
-    environment: Preview
+    environment:
+      name: Preview
+      deployment: false
     timeout-minutes: 1
     outputs:
       url: ${{ steps.deploy.outputs.deployment-url }}
@@ -109,7 +111,9 @@ jobs:
       contents: read
       deployments: write
     runs-on: Ubuntu-Slim
-    environment: Preview
+    environment:
+      name: Preview
+      deployment: false
     timeout-minutes: 1
 
     steps:
