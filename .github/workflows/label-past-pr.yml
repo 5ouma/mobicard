@@ -1,0 +1,22 @@
+name: 🏷️ Label Past Pull Requests
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions: {}
+
+jobs:
+  label-past-pr:
+    name: 🏷️ Label Past Pull Requests
+    permissions:
+      pull-requests: write
+    if: ${{ github.event.pull_request.user.login == 'renovate[bot]' && github.event.pull_request.merged }}
+    runs-on: Ubuntu-Slim
+    timeout-minutes: 1
+
+    steps:
+      - name: 🏷️ Add label to past Pull Requests
+        uses: 5ouma/utils/label-past-pr@7e6e41711384f111bcfbac049c97ee578be5598e # v0.10.0
+        with:
+          label: 🕰️ Past Dependencies
