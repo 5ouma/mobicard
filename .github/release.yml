@@ -2,6 +2,7 @@ changelog:
   exclude:
     labels:
       - ◀️ Revert
+      - 🕰️ Past Dependencies
       - 🧠 Meta
       - 🚀 Release
 
