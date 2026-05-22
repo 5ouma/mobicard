@@ -54,7 +54,7 @@ jobs:
     environment:
       name: Release
       deployment: false
-    timeout-minutes: 1
+    timeout-minutes: 3
 
     steps:
       - name: 🚚 Check out repository
