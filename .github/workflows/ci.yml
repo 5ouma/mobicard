@@ -28,7 +28,7 @@ jobs:
   astro-check:
     name: 🚀 Astro Check
     runs-on: Ubuntu-Slim
-    timeout-minutes: 1
+    timeout-minutes: 3
 
     steps:
       - name: 🚚 Check out repository
@@ -48,7 +48,7 @@ jobs:
   biome-check:
     name: 🏞️ Biome Check
     runs-on: Ubuntu-Slim
-    timeout-minutes: 1
+    timeout-minutes: 3
 
     steps:
       - name: 🚚 Check out repository
@@ -68,7 +68,7 @@ jobs:
     environment:
       name: CI
       deployment: false
-    timeout-minutes: 1
+    timeout-minutes: 3
 
     steps:
       - name: 🚚 Check out repository
@@ -100,7 +100,7 @@ jobs:
   build-check:
     name: 🛠️ Build Check
     runs-on: Ubuntu-Slim
-    timeout-minutes: 1
+    timeout-minutes: 3
 
     steps:
       - name: 🚚 Check out repository
