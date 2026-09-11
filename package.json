@@ -27,7 +27,7 @@
   "devDependencies": {
     "@astrojs/check": "0.9.10",
     "@biomejs/biome": "2.5.12",
-    "@types/node": "26.4.1",
+    "@types/node": "26.5.0",
     "@types/qrcode": "1.5.6",
     "@vitest/coverage-v8": "5.0.0",
     "astrobook": "0.13.3",
