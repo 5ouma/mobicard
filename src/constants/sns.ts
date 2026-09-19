@@ -16,7 +16,7 @@
  */
 export type service = Readonly<{
   url: string | null;
-  icon: `mingcute:${string}` | `simple-icons:${string}`;
+  icon: `mingcute:${string}`;
   color: `#${string}`;
 }>;
 

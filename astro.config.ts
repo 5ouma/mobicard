@@ -11,7 +11,7 @@ export default defineConfig({
   srcDir: process.env.ASTROBOOK ? "./src/components" : "./src",
   site: meta.card,
   integrations: [
-    icon(),
+    icon({ iconDir: "node_modules" }),
     AstroPWA({
       manifest: {
         name: meta.name,
