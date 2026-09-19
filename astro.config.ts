@@ -8,6 +8,7 @@ import meta from "./src/libs/meta.ts";
 const iconURL = new URL(meta.icon);
 
 export default defineConfig({
+  srcDir: process.env.ASTROBOOK ? "./src/components" : "./src",
   site: meta.card,
   integrations: [
     icon(),
