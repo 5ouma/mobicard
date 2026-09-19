@@ -57,7 +57,7 @@ export const services = {
   },
   Instagram: {
     url: "https://www.instagram.com",
-    icon: "mingcute:ins-line",
+    icon: "mingcute:instagram-line",
     color: "#E4405F",
   },
   Mastodon: {
@@ -67,7 +67,7 @@ export const services = {
   },
   Misskey: {
     url: null,
-    icon: "simple-icons:misskey",
+    icon: "mingcute:misskey-fill",
     color: "#A1CA03",
   },
   Threads: {
