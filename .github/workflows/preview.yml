@@ -50,7 +50,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          wranglerVersion: 4.133.0
+          wranglerVersion: 4.134.0
           command: versions upload --name=${{ github.event.repository.name }} --compatibility-date="$(date +%Y-%m-%d)" --assets=./dist --preview-alias=preview
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
@@ -140,6 +140,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          wranglerVersion: 4.133.0
+          wranglerVersion: 4.134.0
           command: versions upload --name=${{ github.event.repository.name }} --compatibility-date="$(date +%Y-%m-%d)" --assets=./dist --preview-alias=astrobook
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
