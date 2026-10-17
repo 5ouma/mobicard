@@ -15,7 +15,7 @@ jobs:
     permissions:
       checks: read
       statuses: read
-    runs-on: Ubuntu-Latest
+    runs-on: Ubuntu-24.04
     timeout-minutes: 10
 
     steps:
