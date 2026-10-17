@@ -24,9 +24,15 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   astro-check:
     name: 🚀 Astro Check
+    permissions:
+      contents: read
     runs-on: Ubuntu-Slim
     timeout-minutes: 3
 
@@ -47,6 +53,8 @@ jobs:
 
   biome-check:
     name: 🏞️ Biome Check
+    permissions:
+      contents: read
     runs-on: Ubuntu-Slim
     timeout-minutes: 3
 
@@ -64,6 +72,8 @@ jobs:
 
   test:
     name: 🧪 Test
+    permissions:
+      contents: read
     runs-on: Ubuntu-Slim
     environment:
       name: CI
@@ -99,6 +109,8 @@ jobs:
 
   build-check:
     name: 🛠️ Build Check
+    permissions:
+      contents: read
     runs-on: Ubuntu-Slim
     timeout-minutes: 3
 

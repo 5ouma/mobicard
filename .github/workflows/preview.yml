@@ -15,6 +15,10 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   deploy:
     name: 🚀 Deploy to Preview
@@ -59,7 +63,7 @@ jobs:
     permissions:
       pull-requests: write
     needs: deploy
-    runs-on: Ubuntu-Latest
+    runs-on: Ubuntu-24.04
     timeout-minutes: 3
 
     steps:
