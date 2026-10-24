@@ -16,7 +16,7 @@ jobs:
     permissions:
       pull-requests: write
     if: ${{ github.event.pull_request.user.login == 'renovate[bot]' && github.event.pull_request.merged }}
-    runs-on: Ubuntu-Slim
+    runs-on: ubuntu-slim
     timeout-minutes: 1
 
     steps:
