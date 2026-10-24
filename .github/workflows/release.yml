@@ -21,7 +21,7 @@ jobs:
     name: 🔖 Release a New Version
     permissions:
       contents: read
-    runs-on: Ubuntu-Slim
+    runs-on: ubuntu-slim
     environment:
       name: Release
       deployment: false

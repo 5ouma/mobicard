@@ -33,7 +33,7 @@ jobs:
     name: 🚀 Astro Check
     permissions:
       contents: read
-    runs-on: Ubuntu-Slim
+    runs-on: ubuntu-slim
     timeout-minutes: 3
 
     steps:
