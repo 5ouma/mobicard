@@ -9,6 +9,11 @@
   "css": { "formatter": { "enabled": true } },
   "overrides": [
     {
+      "includes": ["**/*.md"],
+      "formatter": { "enabled": false },
+      "linter": { "enabled": false }
+    },
+    {
       "includes": ["**/*.astro"],
       "linter": {
         "rules": {
