@@ -1,4 +1,4 @@
-import AstroPWA from "@vite-pwa/astro";
+import { AstroPWAIntegration } from "@vite-pwa/astro";
 import { defineConfig } from "astro/config";
 import icon from "astro-icon";
 import astrobook from "astrobook";
@@ -12,7 +12,7 @@ export default defineConfig({
   site: meta.card,
   integrations: [
     icon({ iconDir: "node_modules" }),
-    AstroPWA({
+    AstroPWAIntegration({
       manifest: {
         name: meta.name,
         short_name: meta.name,
@@ -22,10 +22,11 @@ export default defineConfig({
         display: "fullscreen",
         theme_color: "#f4f4f4",
       },
-      workbox: {
-        maximumFileSizeToCacheInBytes: process.env.ASTROBOOK
-          ? 1024 * 1024 * 8
-          : 2097152,
+      includeManifestIcons: false,
+      maximumFileSizeToCacheInBytes: process.env.ASTROBOOK
+        ? 1024 * 1024 * 8
+        : 2097152,
+      generateSW: {
         globPatterns: ["**/*.{html,js,avif,webp,jpg}"],
         navigateFallback: "/",
       },
