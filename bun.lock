@@ -6,7 +6,7 @@
       "name": "mobicard",
       "dependencies": {
         "@cxa/astro-inline-svg": "0.6.0",
-        "@iconify-json/mingcute": "1.2.8",
+        "@iconify-json/mingcute": "1.2.9",
         "@vite-pwa/astro": "2.0.0",
         "astro": "7.4.4",
         "astro-icon": "1.2.0",
@@ -154,7 +154,7 @@
 
     "@emnapi/wasi-threads": ["@emnapi/wasi-threads@1.2.3", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-ELEBe8PsLvvJ6QMr0zLt8ffvOHW/dc1m3CEzNMg7aJUv3bMaoDtw2TXyDAwkYBuroxxuHEwhRTLJSe5sya547g=="],
 
-    "@iconify-json/mingcute": ["@iconify-json/mingcute@1.2.8", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-J8VXpRwTpx5yzOzyhx3T4IXnfXIKTWFl3rZ9okcW4c+NMMuwkLvdmM4rkjB83tnYIhg5+kkeMpmw8tvSnxd4rQ=="],
+    "@iconify-json/mingcute": ["@iconify-json/mingcute@1.2.9", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-YASrrlFAn+4uLF3xV7DpZhB06ZOP+H1i0sKvm7P75Kl+RkjYntefbG+m8iNaBCjlDdcUxhj1/3kVlrdFTLlVrQ=="],
 
     "@iconify/tools": ["@iconify/tools@5.0.14", "", { "dependencies": { "@cyberalien/svg-utils": "^1.2.19", "@iconify/types": "^2.0.0", "@iconify/utils": "^3.1.4", "fflate": "^0.8.3", "modern-tar": "^0.8.4", "pathe": "^2.0.3", "svgo": "^4.1.0" } }, "sha512-wJ4ZE3/HZh2iBqLwG+8FOMHe7CMJAJqwSXZSpPwMdj1gZM3Z4t2hbQMVw4Vm45oQ985qn0g89PUIcDEdKTheBA=="],
 
