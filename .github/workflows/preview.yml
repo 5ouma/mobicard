@@ -80,7 +80,7 @@ jobs:
         with:
           result-encoding: string
           script: |
-            const manifest = JSON.parse(process.env.manifest);
+            const manifest = JSON.parse(require("node:fs").readFileSync(`${process.env.results_path}/manifest.json`, "utf8"));
             const summary = manifest.reduce((sum, { summary }) => {
               for (const label in summary) sum[label] = (sum[label] || 0) + summary[label];
               return sum;
@@ -94,7 +94,7 @@ jobs:
             const scores = `| ${results.map(({ score }) => score).join(" | ")} |`;
             return `${labels}\n| ${results.map(() => ":-:").join(" | ")} |\n${scores}`;
         env:
-          manifest: ${{ steps.lighthouse.outputs.manifest }}
+          results_path: ${{ steps.lighthouse.outputs.resultsPath }}
 
       - name: 💬 Comment result
         uses: mshick/add-pr-comment@ec328af66588ab8f77cdeb2c264f14aba45bbf59 # v3.12.0
