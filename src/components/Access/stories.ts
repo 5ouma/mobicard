@@ -12,4 +12,5 @@ export const SubDomain: Props = {
 
 export const WithoutEmail: Props = {
   homepage: new URL("https://www.example.com"),
+  email: undefined,
 };
