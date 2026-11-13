@@ -3,7 +3,7 @@ import { Icon } from "astro-icon/components";
 
 import "../../styles/global.css";
 
-export type Props = { homepage: URL; email?: string };
+export type Props = { homepage: URL; email: string | undefined };
 const { homepage, email } = Astro.props;
 ---
 
