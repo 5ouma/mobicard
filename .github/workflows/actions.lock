@@ -4,34 +4,34 @@
 version: 'v0.0.3'
 workflows:
     '.github/workflows/ci.yml':
-        - '5ouma/utils@v0.13.2'
+        - '5ouma/utils@v0.13.3'
         - 'actions/checkout@v7.0.1'
         - 'codecov/codecov-action@v7.1.1'
     '.github/workflows/label-past-pr.yml':
-        - '5ouma/utils@v0.13.2'
+        - '5ouma/utils@v0.13.3'
     '.github/workflows/labeler.yml':
         - 'fuxingloh/multi-labeler@v5.0.0'
     '.github/workflows/merge-gatekeeper.yml':
         - 'upsidr/merge-gatekeeper@v1.2.1'
     '.github/workflows/pre-commit.yml':
-        - '5ouma/utils@v0.13.2'
+        - '5ouma/utils@v0.13.3'
     '.github/workflows/preview.yml':
-        - '5ouma/utils@v0.13.2'
+        - '5ouma/utils@v0.13.3'
         - 'actions/checkout@v7.0.1'
         - 'actions/github-script@v9.0.0'
         - 'cloudflare/wrangler-action@v4.1.3'
         - 'mshick/add-pr-comment@v3.12.0'
         - 'treosh/lighthouse-ci-action@12.6.2'
     '.github/workflows/release.yml':
-        - '5ouma/utils@v0.13.2'
+        - '5ouma/utils@v0.13.3'
         - 'actions/checkout@v7.0.1'
         - 'actions/create-github-app-token@v3.4.0'
         - 'cloudflare/wrangler-action@v4.1.3'
         - 'songmu/tagpr@v1.22.0'
 dependencies:
-    '5ouma/utils@v0.13.2':
-        ref: 'v0.13.2'
-        commit: 'sha1-ffc700f002ebcb26f8ed359820dead1bc1d43834'
+    '5ouma/utils@v0.13.3':
+        ref: 'v0.13.3'
+        commit: 'sha1-1e7a66fb00da1446aa2ac2610ac9cf025c8aa93f'
         owner_id: 101255979
         repo_id: 849736738
         uses:
@@ -40,6 +40,7 @@ dependencies:
             - 'actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3'
             - 'actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e'
             - 'actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1'
+            - 'j178/prek-action@44924fe9ef4a6f88253c4b6b1bf11c689d3ce53d'
             - 'oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6'
             - 'pre-commit-ci/lite-action@062bca0919bc9d6e66755cc05074b70c77e111fc'
     'actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9':
@@ -104,6 +105,11 @@ dependencies:
         commit: 'sha1-bcd50af464202999e57f556b4aefcf05a34abf85'
         owner_id: 4266087
         repo_id: 329257641
+    'j178/prek-action@44924fe9ef4a6f88253c4b6b1bf11c689d3ce53d':
+        ref: 'v3.1.0'
+        commit: 'sha1-44924fe9ef4a6f88253c4b6b1bf11c689d3ce53d'
+        owner_id: 10510431
+        repo_id: 1052387486
     'mshick/add-pr-comment@v3.12.0':
         ref: 'v3.12.0'
         commit: 'sha1-ec328af66588ab8f77cdeb2c264f14aba45bbf59'
