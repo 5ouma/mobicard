@@ -21,6 +21,6 @@ jobs:
 
     steps:
       - name: 🏷️ Add label to past Pull Requests
-        uses: 5ouma/utils/label-past-pr@v0.13.2
+        uses: 5ouma/utils/label-past-pr@v0.13.3
         with:
           label: 🕰️ Past Dependencies
